@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
+		<meta name="description" content="Tiger Ji's Portfolio">
+		<meta name="keywords" content="Tiger Ji, Brown University"> -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Tiger Ji's Portfolio </title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+        </style>
+
+        <script src="https://kit.fontawesome.com/35850cf6ad.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <nav id="nav-bar">
+            <a href="#home" class="nav-bar-left"> TJ </a>
+            <a href="#about" class="nav-bar-right"> About </a>
+            <a href="#featured-projects" class="nav-bar-right"> Projects </a>
+            <a href="#qualifications" class="nav-bar-right"> Qualifications </a>
+            <a href="#contact" class="nav-bar-right"> Contact </a>
+        </nav>
+
+        <header id="home"> 
+            <div></div>
+            <h1 id="welcome"> 
+                <span id="hello"> </span>
+                <span id="my-name"> </span> 
+            </h1> 
+            <h2 style="text-align: center" id="my-portfolio"> </h2>
+            <!-- <a href="#about" class="arrow"></a> -->
+        </header>
+
+        <main id="page-content">
+            <div id="left-column">
+                <div id="contact-icons"></div>
+            </div>
+
+            <div id="middle-column"> 
+                <div id="about" class="content-section"> 
+                    <h1> About Me </h1>   
+
+                    <div class="row">
+                        <div style="width:540px">
+                            <p> Hi! My name is Tiger Ji, and I'm currently pursuing a B.S. in Computer Science and Applied Mathematics at Brown University.  </p>
+                            <p> My primary interests lie in AI/ML and Software Engineering. </p>
+                            <p> Some of my other hobbies and passions include: </p> 
+                            <ul>
+                                <li> Breakdance! I'm the Dance Captain of Ground Breakin', Brown's premier breaking club — you might catch a glimpse of me spinning on my head if you drop by one of our practices. </li>
+                                <li> Classical Music —  I've played violin and piano for over 8 years, and I'm a current member of the Brown University Orchestra. </li>
+                                <li> Basketball is my favorite sport, and on any given day you'll likely find me playing a pickup game or obsessing over NBA analytics. </li>
+                                <li> Word Hunt. With a high score of 55.1k and over 2500 wins, you'll be hard pressed to find a bigger WH fanatic than me. </li>
+                            </ul> 
+                        </div>            
+                        <img id="portrait" src="portrait.jpeg" width="420px" height="420px">
+                    </div>
+                </div>
+            
+                <div id="featured-projects" class="content-section">
+                    <h1> Featured Projects </h1>
+                    <div class="row" style="margin-bottom: 40px">
+                        <img src="background.jpeg" width="65%" style="border-radius: 10px;">
+                        <div class="featured-description" style="width: 35%;">  
+                            <h2> Sunflower Washateria </h2>
+                            <p> </p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 40px">
+                        <div class="featured-description" style="width: 50%;"> 
+                            <h2> Word Hunt Solver </h2>
+                            <p> Find all solutions for a given Word Hunt game! This program uses a custom-built trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
+                            <p> Code is written with HTML, CSS, and JavaScript on the front-end along with Django and Python on the back-end. </p> 
+                        </div>
+                        <img src="background.jpeg" width="50%" style="border-radius: 10px;">
+                    </div>
+                    <div class="row" style="margin-bottom: 40px">
+                        <img src="cssi.png" width="63%" style="border-radius: 10px;">
+                        <div class="featured-description" style="width:37%">
+                            <h2> Personal University Student Page </h2>
+                            <p> This university student page is a convenient tool for incoming freshmen, offering various features ranging from an integrated calendar to a search engine for nearby restaurants based on user preferences. </p>
+                            <p> Code is written with HTML, CSS, and JavaScript with Google FireBase for back-end functionality, and Gmail authentication is used to ensure confidentiality and usability on a per-user basis.</p> 
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="other-projects" class="content-section"> 
+                    <h1 style="text-align: center;"> Other Notable Projects </h1>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; grid-row-gap: 20px; grid-column-gap: 20px;">
+                        <div class="project-card">
+                            <h2> Search </h2>
+                            <p> Created a custom search engine that returns relevant results from a corpus of provided wiki pages. Queries are efficiently matched with relevant documents using Google's PageRank algorithm and a page's term-relevance score. </p>
+                            <p> Python </p>
+                        </div>
+                        <div class="project-card">
+                            <h2> Travel Planner </h2>
+                            <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two Cities based on minimum cost or duration as well as maximal directness. </p>
+                            <p> Java </p>
+                        </div>
+                        <div class="project-card">
+                            <h2> Liquid Image Rescaling </h2>
+                            <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm that minimizes unwanted distortions. </p>
+                            <p> Pyret </p>
+                        </div>
+                        <div class="project-card">
+                            <h2> Decision Tree </h2>
+                            <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
+                            <p> Java </p>
+                        </div>
+                        <div class="project-card">
+                            <h2> Updater </h2>
+                            <p> Designed a custom "cursor" data structure enabling efficiently search, update, and multidirectional traversal operations on an immutable tree with arbitrary degree. </p>
+                            <p> Pyret </p>
+                        </div>
+                        <div class="project-card">
+                            <h2> My Portfolio </h2>
+                            <p> My personal website! In other words, the thing you're looking at right now. </p>
+                            <p> HTML, CSS, JavaScript </p>
+                        </div>
+                    </div>
+                </div>
+                    
+                <!-- <div id="qualifications"> 
+                    <h1> Qualifications </h1>
+                    <div class="row"> 
+                        <div>
+                            <div class="row">
+                                <img src="brown.png" width="120px">
+                                <div>
+                                    <h2> Brown University </h2>
+                                    <p> B.S. in Computer Science and Applied Mathematics </p>
+                                    <p> GPA: 4.0 </p>
+                                    <p> Relevant Coursework </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2> Skills </h2>
+
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </main>
+    </body>
+
+    <script src = "index.js"></script>
+</html>
