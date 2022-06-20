@@ -3,6 +3,8 @@ let navScrollable = false;
 
 window.onscroll = (event) => {
     toggleNavBar();
+    showContent();
+    blurHome();
 }
 
 window.onload = (event) => {
@@ -14,7 +16,7 @@ window.onload = (event) => {
         startTransitions(500);
     }
 
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 }
 
 const startTransitions = (offset) => {
@@ -67,12 +69,46 @@ const addContact = () => {
 const toggleNavBar = () => {
     if (navScrollable) {
         if (window.scrollY > 25 && lastScrollY < window.scrollY) {
-            document.querySelector("#nav-bar").classList.add("nav-hidden");
+            document.getElementById("nav-bar").classList.add("nav-hidden");
         } 
         else {
-            document.querySelector("#nav-bar").classList.remove("nav-hidden");
+            document.getElementById("nav-bar").classList.remove("nav-hidden");
         }
 
         lastScrollY = window.scrollY;
     }
+}
+
+const showContent = () => {
+    let allContent = document.querySelectorAll(".content-section");
+
+    for (var i = 0; i < allContent.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = allContent[i].getBoundingClientRect().top;
+        let elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            allContent[i].classList.add("reveal");
+        } 
+    }
+}
+
+const blurHome = () => {
+    let distanceScrolled = $(this).scrollTop();
+    let blurFactor = 60 * window.innerHeight / distanceScrolled;
+    $("#home").css("-webkit-filter", "blur("+distanceScrolled/blurFactor+"px)");
+}
+
+const showExperienceDescription = (organization) => {
+    if (organization == "iCode") {
+        document.getElementById("experience-description").innerHTML = "icode";
+    }
+    else if (organization == "EnLiving Design") {
+        document.getElementById("experience-description").innerHTML = "enliving design";
+    }
+    else {
+        document.getElementById("experience-description").innerHTML = "google cssi";
+    }
+
+    console.log(organization);
 }

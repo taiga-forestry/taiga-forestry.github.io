@@ -4,28 +4,35 @@ html {
 
 body {
     color: #EAE6E5;
-    background-color: #12130F;
+    /* background-color: #12130F; */
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    --nav-height: 80px;
-    /* padding-top: var(--nav-height); */
+    --nav-height: 72px;
+    background: rgb(17,31,39);
+    background: linear-gradient(180deg, rgba(17,31,39,1) 0%, rgba(11,20,25,1) 100%);
     margin: 0px;
 }
 
 a {
     color: #EAE6E5;
     text-decoration: none;
-    transition: color 0.15s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 h1 {
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 h2 {
-    font-weight: bolder;
-    font-size: 24px;
+    /* font-weight: bolder; */
+    font-size: 30px;
     margin-top: 0px;
+}
+
+h3 {
+    font-size: 27px;
+    margin-top: 0px;
+    margin-bottom: 12px;
 }
 
 ul {
@@ -57,8 +64,7 @@ li {
     transition: transform 0.3s;
     box-shadow: 0px 10px 30px -10px #1d2e26;
     opacity: 0.975;
-    z-index: 2; 
-    backdrop-filter: blur(10px);
+    z-index: 10; 
     /* make transparent/blur background */
 }
 
@@ -106,13 +112,10 @@ li {
     margin: 24px;
 }
 
-.nav-bar-left:hover {
+a:hover {
     color:rgb(0, 255, 238);
 }
 
-.nav-bar-right:hover {
-    color:rgb(0, 255, 238);
-}
 
 #portrait {
     max-width: fit-content;
@@ -146,13 +149,12 @@ li {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    transition: color 0.15s ease-in-out;
-    transition: margin 0.15s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
 }
 
 .contact-icon:hover {
-    color:rgb(0, 255, 238);
-    margin-top: -3;
+    margin-top: -3px;
 }
 
 #middle-column {
@@ -164,6 +166,15 @@ li {
 .content-section {
     margin-bottom: 60px;
     padding-right: 50px;
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.content-section.reveal{
+    transform: translateY(0);
+    opacity: 1;
 }
 
 #featured-projects {
@@ -176,6 +187,14 @@ li {
     grid-template-rows: 3fr 16fr;
 }
 
+#projects-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    grid-row-gap: 20px; 
+    grid-column-gap: 20px;
+}
+
 .featured-description {
     padding: 30px;
 }
@@ -185,10 +204,25 @@ li {
     padding: 40px;
     border-radius: 8px;
     width: 300px;
-    height: 300px;
+    height: 325px;
+    display: grid;
+    grid-template-rows: 0.5fr 75% 1fr;
+    transition: margin 0.2s ease-in-out;
 }
 
-.folder-icon {
-    margin-right: 30px;
-    margin-bottom: 30px;
+.project-card-icon {
+    font-size: 28px; 
+    margin: 0px;
+    margin-left: 12px;
+    transition: color 0.25s ease-in-out;
+}
+
+.project-card:hover {
+    margin-top: -6px;
+}
+
+#qualifications {
+    display: grid; 
+    grid-template-rows: 2fr 5fr;
+    grid-template-columns: 1fr 1fr;
 }

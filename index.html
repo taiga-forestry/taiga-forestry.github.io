@@ -14,6 +14,7 @@
         </style>
 
         <script src="https://kit.fontawesome.com/35850cf6ad.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
 
     <body>
@@ -22,7 +23,7 @@
             <a href="#about" class="nav-bar-right"> About </a>
             <a href="#featured-projects" class="nav-bar-right"> Projects </a>
             <a href="#qualifications" class="nav-bar-right"> Qualifications </a>
-            <a href="#contact" class="nav-bar-right"> Contact </a>
+            <a href="#contact" class="nav-bar-right" style="margin-left: 0px; border-left: 0.5px solid #EAE6E5; padding-left: 16px; padding-top: 10px; padding-bottom: 11px;"> Resume </a>
         </nav>
 
         <header id="home"> 
@@ -32,7 +33,6 @@
                 <span id="my-name"> </span> 
             </h1> 
             <h2 style="text-align: center" id="my-portfolio"> </h2>
-            <!-- <a href="#about" class="arrow"></a> -->
         </header>
 
         <main id="page-content">
@@ -51,7 +51,7 @@
                             <p> Some of my other hobbies and passions include: </p> 
                             <ul>
                                 <li> Breakdance! I'm the Dance Captain of Ground Breakin', Brown's premier breaking club — you might catch a glimpse of me spinning on my head if you drop by one of our practices. </li>
-                                <li> Classical Music —  I've played violin and piano for over 8 years, and I'm a current member of the Brown University Orchestra. </li>
+                                <li> Classical Music — I've played violin and piano for over 8 years, and I'm a current member of the Brown University Orchestra. </li>
                                 <li> Basketball is my favorite sport, and on any given day you'll likely find me playing a pickup game or obsessing over NBA analytics. </li>
                                 <li> Word Hunt. With a high score of 55.1k and over 2500 wins, you'll be hard pressed to find a bigger WH fanatic than me. </li>
                             </ul> 
@@ -78,8 +78,8 @@
                         <img src="background.jpeg" width="50%" style="border-radius: 10px;">
                     </div>
                     <div class="row" style="margin-bottom: 40px">
-                        <img src="cssi.png" width="63%" style="border-radius: 10px;">
-                        <div class="featured-description" style="width:37%">
+                        <img src="cssi.png" width="60%" style="border-radius: 10px;">
+                        <div class="featured-description" style="width:40%">
                             <h2> Personal University Student Page </h2>
                             <p> This university student page is a convenient tool for incoming freshmen, offering various features ranging from an integrated calendar to a search engine for nearby restaurants based on user preferences. </p>
                             <p> Code is written with HTML, CSS, and JavaScript with Google FireBase for back-end functionality, and Gmail authentication is used to ensure confidentiality and usability on a per-user basis.</p> 
@@ -89,61 +89,103 @@
             
                 <div id="other-projects" class="content-section"> 
                     <h1 style="text-align: center;"> Other Notable Projects </h1>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; grid-row-gap: 20px; grid-column-gap: 20px;">
+                    <div id="projects-grid">
                         <div class="project-card">
-                            <h2> Search </h2>
+                            <h3> Search </h3>
                             <p> Created a custom search engine that returns relevant results from a corpus of provided wiki pages. Queries are efficiently matched with relevant documents using Google's PageRank algorithm and a page's term-relevance score. </p>
-                            <p> Python </p>
+                            <div class="row" style="justify-content: right; align-items: center;">
+                                <p style="margin-right: auto;"> Python </p>
+                                <a class="project-card-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-card">
-                            <h2> Travel Planner </h2>
+                            <h3> Travel Planner </h3>
                             <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two Cities based on minimum cost or duration as well as maximal directness. </p>
-                            <p> Java </p>
+                            <div class="row" style="justify-content: right; align-items: center;">
+                                <p style="margin-right: auto;"> Java </p>
+                                <a class="project-card-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-card">
-                            <h2> Liquid Image Rescaling </h2>
+                            <h3> Liquid Image Rescaling </h3>
                             <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm that minimizes unwanted distortions. </p>
-                            <p> Pyret </p>
+                            <div class="row" style="justify-content: right; align-items: center;">
+                                <p style="margin-right: auto;"> Pyret </p>
+                                <a class="project-card-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-card">
-                            <h2> Decision Tree </h2>
+                            <h3> Decision Tree </h3>
                             <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
-                            <p> Java </p>
+                            <div class="row" style="justify-content: right; align-items: center;">
+                                <p style="margin-right: auto;"> Java </p>
+                                <a class="project-card-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-card">
-                            <h2> Updater </h2>
+                            <h3> Updater </h3>
                             <p> Designed a custom "cursor" data structure enabling efficiently search, update, and multidirectional traversal operations on an immutable tree with arbitrary degree. </p>
-                            <p> Pyret </p>
+                            <div class="row" style="justify-content: right; align-items: center;">
+                                <p style="margin-right: auto;"> Pyret </p>
+                                <a class="project-card-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-card">
-                            <h2> My Portfolio </h2>
+                            <h3> My Portfolio </h3>
                             <p> My personal website! In other words, the thing you're looking at right now. </p>
-                            <p> HTML, CSS, JavaScript </p>
+                            <div class="row" style="justify-content: right; align-items: center;">
+                                <p style="margin-right: auto;"> HTML CSS JS jQuery </p>
+                                <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-card-icon">
+                                    <i class="fa-brands fa-github"></i> 
+                                </a>
+                                <a class="project-card-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                     
-                <!-- <div id="qualifications"> 
-                    <h1> Qualifications </h1>
-                    <div class="row"> 
-                        <div>
-                            <div class="row">
-                                <img src="brown.png" width="120px">
-                                <div>
-                                    <h2> Brown University </h2>
-                                    <p> B.S. in Computer Science and Applied Mathematics </p>
-                                    <p> GPA: 4.0 </p>
-                                    <p> Relevant Coursework </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2> Skills </h2>
-
+                <div id="qualifications" class="content-section"> 
+                    <h1 style="grid-column-start: span 2;"> Qualifications </h1>
+                    <div class="row">
+                        <img src="brown.png" height="180px">
+                        <div style="margin-left: 15px; margin-right: 36px;">
+                            <h2> Brown University </h2>
+                            <p> B.S. — Computer Science and Applied Mathematics </p>
+                            <p> GPA: 4.0 </p>
+                            <p> Relevant Coursework </p>
                         </div>
                     </div>
-                </div> -->
+
+                    <div style="display: grid; grid-template-rows: 1fr 4fr; grid-template-columns: 1fr 2fr;">
+                        <h2 style="grid-column-start: span 4"> Experience </h2>  
+                        <div>
+                            <ul style="margin-top: 0px;">
+                                <a onclick="showExperienceDescription('Google CSSI')">
+                                    <li> Google CSSI </li> 
+                                </a>
+                                <a onclick="showExperienceDescription('iCode')"> 
+                                    <li> iCode </li> 
+                                </a>
+                                <a onclick="showExperienceDescription('EnLiving Design')"> 
+                                    <li> EnLiving Design </li> 
+                                </a>
+                            </ul>
+                        </div>
+                        <div id="experience-description"></div>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
