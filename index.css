@@ -86,10 +86,6 @@ li {
     animation-name: fadein;
 }
 
-.blur {
-
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
