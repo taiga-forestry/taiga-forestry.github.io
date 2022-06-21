@@ -40,6 +40,11 @@ ul {
     padding-left: 30px;
 }
 
+/* ol {
+    list-style: none;
+    padding-left: 30px;
+} */
+
 li {
     margin-bottom: 10px;
 }
@@ -223,6 +228,6 @@ a:hover {
 
 #qualifications {
     display: grid; 
-    grid-template-rows: 2fr 5fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 125px 1fr;
+    grid-template-columns: 9fr 11fr;
 }
