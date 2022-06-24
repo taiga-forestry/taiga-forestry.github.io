@@ -13,6 +13,10 @@ body {
     --nav-height: 7rem;
 }
 
+footer {
+    background-color: rgba(11,20,25,1);
+}
+
 h1 {
     font-size: max(6vw, 6.75em);
 }
@@ -64,8 +68,7 @@ ol {
 }
 
 ol > a > li {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     padding-left: 20px;
     line-height: 1.2em;
 }
@@ -86,7 +89,7 @@ a:hover {
 
 .button {
     font-size: 2em;
-    border: 1px solid white; 
+    border: 1px solid #EAE6E5; 
     padding: 20px; 
     border-radius: 6%;
     transition: all 0.2s linear;
@@ -355,14 +358,14 @@ figure {
 @media screen and (min-width: 576.5px) and (max-width: 768.5px) {
     #other-projects-grid {
         grid-template-rows: repeat(3, minmax(350px, 400px));
-        grid-template-columns: repeat(2, minmax(240px, 350px));
+        grid-template-columns: repeat(2, minmax(240px, 325px));
     }
 }
 
 @media screen and (min-width: 768.5px) and (max-width: 992.5px) {
     #other-projects-grid {
         grid-template-rows: repeat(3, minmax(360px, 400px));
-        grid-template-columns: repeat(2, minmax(245px, 375px));
+        grid-template-columns: repeat(2, minmax(245px, 350px));
     }
 }
 
@@ -384,7 +387,7 @@ figure {
 
 #experience-grid {
     display: grid; 
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 160px 1fr;
 }
 
 #experience-description {
@@ -424,20 +427,20 @@ figure {
 
 @media screen and (min-width: 992.5px) {
     #education { width: min(400px, 30vw); margin-right: 25px; }
-    #experience { width: min(600px, 40vw); padding: 1.2em; }
+    #experience { width: min(600px, 42vw); padding: 1.2em; }
 }
 
 /* CONTACT  */
 #contact-icons {
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
     justify-items: center;
     position: fixed;
-    bottom: 0px;
+    bottom: 1.5em;
     font-size: 2.75em;
 }
 
-.contact-icon {
-    margin-bottom: 1em;
+.contact-icon, .contact-icon-footer {
     transition: transform 0.2s linear;
 }
 
@@ -449,4 +452,24 @@ figure {
     font-size: 2.4em; 
     margin: 0px;
     margin-left: 0.5em;
+}
+
+#contact-footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+    font-size: 2.75em;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+}
+
+#outro {
+    color: #eae6e5b5;
+    font-size: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+@media screen and (min-width: 992.5px) {
+    #contact-footer { display: none; }
+    #outro { margin-top: 10rem; }
 }

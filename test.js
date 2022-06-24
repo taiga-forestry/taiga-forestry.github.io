@@ -22,8 +22,6 @@ const loadPage = () => {
         startTransitions(500);
     }
 
-    // addContact();
-    // addNavBar();
     // window.scrollTo(0, 0);
 }
 
@@ -70,7 +68,7 @@ const addContact = () => {
         </a>
         <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon">
             <i class="fa-brands fa-linkedin-in"></i>
-        </a> `
+        </a>`
     document.getElementById("contact-icons").classList.add("fade");
 }
 
@@ -141,7 +139,7 @@ const showExperienceDescription = (organization) => {
             </h6>
             <p> May 2020 — August 2020 </p>
             <ul>
-                <li> Read 100+ pages of literature about the utility of depth cameras in helping occupational therapists more accurately assess sitting body balance </li>
+                <li> Read 100+ pages of literature about the utility of depth cameras in helping occupational therapists more accurately assess clinical sitting body balance </li>
                 <li> Coded a program in C# to track joint movement patterns using the Intel RealSense skeleton tracking SDK to update the previous code written for the discontinued Microsoft Kinect line </li>
             </ul>
         </div>`;
