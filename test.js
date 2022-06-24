@@ -1,6 +1,7 @@
 let lastScrollY = window.scrollY;
 let navScrollable = false;
 let lastSelected = "cssi";
+let navModalState = "closed";
 
 window.onscroll = (event) => {
     toggleNavBar();
@@ -10,7 +11,7 @@ window.onscroll = (event) => {
 
 window.onload = (event) => {
     loadPage();
-    showExperienceDescription();
+    showExperienceDescription("");
 }
 
 const loadPage = () => {
@@ -22,6 +23,7 @@ const loadPage = () => {
         startTransitions(500);
     }
 
+    addNavBar();
     // window.scrollTo(0, 0);
 }
 
@@ -110,8 +112,6 @@ const blurHome = () => {
 
 const showExperienceDescription = (organization) => {
     document.getElementById(lastSelected).classList.remove("ol-selected");
-    document.getElementById("experience-description").classList.add("fade")
-    document.getElementById("experience-description").innerHTML = "";
 
     if (organization == "iCode") {
         lastSelected = "icode";
@@ -163,3 +163,21 @@ const showExperienceDescription = (organization) => {
 
     console.log(organization);
 }
+
+const openNavModal = () => {
+    document.getElementById("nav-modal").classList.add("reveal");
+    $("#home-page").css("-webkit-filter", "blur(10px)");
+    document.getElementById("page-content").classList.add("blur");
+    document.documentElement.classList.add("disable-vertical-scroll");
+    navModalState = "open";
+}
+
+const closeNavModal = () => {
+    document.getElementById("nav-modal").classList.remove("reveal");
+    blurHome();
+    document.getElementById("page-content").classList.remove("blur");
+    document.documentElement.classList.remove("disable-vertical-scroll");
+    navModalState = "closed";
+}
+
+// document.querySelectorAll(".nav-modal-item").addEventListener("click", closeNavModal);

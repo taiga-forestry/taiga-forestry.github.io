@@ -2,7 +2,11 @@
 html {
     scroll-behavior: smooth; 
     font-size: 62.5%;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
+}
+
+.disable-vertical-scroll {
+    overflow-y: hidden;
 }
 
 body {
@@ -62,7 +66,7 @@ ul > li {
     line-height: 1.2em;
 }
 
-ol {
+.experience-list {
     font-size: 1.9em;
     border-left: 1.5px solid rgba(255, 255, 255, 0.1);
 }
@@ -71,6 +75,7 @@ ol > a > li {
     padding: 10px;
     padding-left: 20px;
     line-height: 1.2em;
+    transition: all 0.2s linear;
 }
 
 .ol-selected {
@@ -85,6 +90,7 @@ a {
 
 a:hover {
     color:rgb(0, 255, 238);
+    cursor: pointer;
 }
 
 .button {
@@ -149,6 +155,14 @@ a:hover {
     animation-name: fadein;
 }
 
+.blur {
+    filter: blur(8px);
+}
+
+.hidden {
+    display: none;
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -173,13 +187,18 @@ a:hover {
     padding: 2.5rem;
 }
 
+.nav-modal-item {
+    font-size: max(2.25em, 3.75vw);
+    padding: 3.5rem;
+}
+
 #nav-dropdown {
     display: none;
     font-size: 3.25em;
     transition: color 0.2s linear;
 }
 
-#nav-resume {
+#nav-bar-resume {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-left: 0.5px solid #EAE6E5;
@@ -190,9 +209,42 @@ a:hover {
     box-shadow: none;
 }
 
+#nav-modal {
+    position: fixed;
+    z-index: 20;
+    right: -50%;
+    top: 0;
+    width: 40%;
+    height: 100%; 
+    background-color: #22362d;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    padding: 25px;
+    box-shadow: 0px 10px 30px -10px #0e1612;
+}
+
+#nav-modal.reveal {
+    right: 0%;
+    opacity: 1;
+}
+
+#close-nav-modal {
+    z-index: 5;
+    font-size: 2.75em;
+    top: 25px;
+    align-self: flex-start;
+    position: absolute;
+}
+
 @media screen and (max-width: 768.5px) { 
     #nav-bar a:not(:first-child) { display: none; }
     #nav-dropdown { display: inline; }
+}
+
+@media screen and (min-width: 768.5px) { 
+    #nav-modal { display: none; }
 }
 
 /* HOME-PAGE */
@@ -205,6 +257,7 @@ a:hover {
     background: url("background.jpeg");
     background-size: cover;
     background-position: center center;
+    transition: all 0.2s linear;
 }
 
 #greeting {
@@ -220,6 +273,7 @@ a:hover {
 #page-content {
     grid-template-columns: 10rem 1fr;
     background: linear-gradient(180deg, rgba(16,29,37,1) 0%, rgba(11,20,25,1) 100%);
+    transition: all 0.2s linear;
 }
 
 #sidebar, #mainbar {
@@ -233,7 +287,7 @@ a:hover {
     transition: 1s all ease;
 }
 
-.content-section.reveal{
+.content-section.reveal {
     transform: translateY(0);
     opacity: 1;
 }
@@ -401,13 +455,14 @@ figure {
     }
     #education {
         margin-bottom: 3em;
-        width: 400px;
+        width: min(400px, 80vw);
     }
     #education-info {
         padding-left: 1.6em;
     }
     #experience {
-        width: min(450px, 80vw);
+        width: min(600px, 80vw);
+        height: clamp(300px, calc(1068px - 100vw), 600px);
     }
 }
 
@@ -423,11 +478,18 @@ figure {
     #education-info {
         padding-left: 1.6em;
     }
+    #experience {
+        height: clamp(275px, calc(1267px - 100vw), 325px);
+    }
 }
 
 @media screen and (min-width: 992.5px) {
     #education { width: min(400px, 30vw); margin-right: 25px; }
-    #experience { width: min(600px, 42vw); padding: 1.2em; }
+    #experience { 
+        width: min(600px, 42vw); 
+        height: clamp(360px, calc(1800px - 100vw), 480px);
+        padding: 1.2em; 
+    }
 }
 
 /* CONTACT  */

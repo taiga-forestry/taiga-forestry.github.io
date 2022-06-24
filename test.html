@@ -26,8 +26,16 @@
             <a href="#about" class="nav-bar-item"> About </a>
             <a href="#featured-projects" class="nav-bar-item"> Projects </a>
             <a href="#qualifications" class="nav-bar-item"> Qualifications </a>
-            <a href="#contact" id="nav-resume" class="nav-bar-item"> Resume </a>
-            <i id="nav-dropdown" class="nav-bar-item material-symbols-outlined"> menu </i>
+            <a href="#contact" id="nav-bar-resume" class="nav-bar-item"> Resume </a>
+            <i id="nav-dropdown" class="nav-bar-item material-symbols-outlined"> <a onclick="openNavModal()"> menu </a> </i>
+        </nav>
+
+        <nav id="nav-modal" class="column">
+            <i id="close-nav-modal" onclick="closeNavModal()" class="material-symbols-outlined"> <a> close </a> </i>
+            <a href="#about" class="nav-modal-item" onclick="closeNavModal()"> About </a>
+            <a href="#featured-projects" class="nav-modal-item" onclick="closeNavModal()"> Projects </a>
+            <a href="#qualifications" class="nav-modal-item" onclick="closeNavModal()"> Qualifications </a>
+            <a href="#contact" class="nav-modal-item" id="nav-modal-resume" onclick="closeNavModal()"> Resume </a>
         </nav>
 
         <header id="home-page" class="grid">
@@ -217,7 +225,7 @@
                             <h4> Experience </h4>  
                             <div id="experience-grid">
                                 <div>
-                                    <ol>
+                                    <ol class="experience-list">
                                         <a onclick="showExperienceDescription('Google CSSI')">
                                             <li id="cssi"> Google CSSI </li> 
                                         </a>
@@ -252,7 +260,10 @@
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
-            <p id="outro"> taiga-forestry ♮ Tiger Ji ♮ tiger_ji@brown.edu</p>
+
+            <p id="outro"> 
+                <a href="tood.html"> taiga-forestry ♮ Tiger Ji ♮ tiger_ji@brown.edu </a>
+            </p>
         </footer>
     </body>
 </html>
