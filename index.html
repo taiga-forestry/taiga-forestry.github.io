@@ -1,52 +1,63 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="Tiger Ji's Portfolio">
-		<meta name="keywords" content="Tiger Ji, Brown University"> -->
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="Tiger Ji, Brown University">
+    
         <title> Tiger Ji's Portfolio </title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="test.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
         </style>
 
-        <script src = "index.js"></script>
+        <script src="test.js"></script>
         <script src="https://kit.fontawesome.com/35850cf6ad.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
 
     <body>
-        <nav id="nav-bar">
-            <a href="#home" class="nav-bar-left"> TJ </a>
-            <a href="#about" class="nav-bar-right"> About </a>
-            <a href="#featured-projects" class="nav-bar-right"> Projects </a>
-            <a href="#qualifications" class="nav-bar-right"> Qualifications </a>
-            <a href="#contact" class="nav-bar-right" style="margin-left: 0px; border-left: 0.5px solid #EAE6E5; padding-left: 16px; padding-top: 10px; padding-bottom: 11px;"> Resume </a>
+        <nav id="nav-bar" class="row">
+            <a href="#home-page" class="nav-bar-item left" onclick="scrollTo(0, 0); location.reload();"> TJ </a>
+            <a href="#about" class="nav-bar-item"> About </a>
+            <a href="#featured-projects" class="nav-bar-item"> Projects </a>
+            <a href="#qualifications" class="nav-bar-item"> Qualifications </a>
+            <a href="#contact" id="nav-bar-resume" class="nav-bar-item"> Resume </a>
+            <i id="nav-dropdown" class="nav-bar-item material-symbols-outlined"> <a onclick="openNavModal()"> menu </a> </i>
         </nav>
 
-        <header id="home"> 
-            <div></div>
-            <h1 id="welcome"> 
-                <span id="hello"> </span>
-                <span id="my-name"> </span> 
-            </h1> 
-            <h2 style="text-align: center" id="my-portfolio"> </h2>
+        <nav id="nav-modal" class="column">
+            <i id="close-nav-modal" onclick="closeNavModal()" class="material-symbols-outlined"> <a> close </a> </i>
+            <a href="#about" class="nav-modal-item" onclick="closeNavModal()"> About </a>
+            <a href="#featured-projects" class="nav-modal-item" onclick="closeNavModal()"> Projects </a>
+            <a href="#qualifications" class="nav-modal-item" onclick="closeNavModal()"> Qualifications </a>
+            <a href="#contact" class="nav-modal-item" id="nav-modal-resume" onclick="closeNavModal()"> Resume </a>
+        </nav>
+
+        <header id="home-page" class="grid">
+            <div style="grid-row-start: 2; grid-column-start: 2;">
+                <h1 id="greeting">
+                    <span id="hello"></span>
+                    <span id="my-name"></span>
+                </h1>
+                <h2 id="welcome"> </h2>
+            </div>
         </header>
 
-        <main id="page-content">
-            <div id="left-column">
-                <div id="contact-icons"></div>
+        <main id="page-content" class="grid">
+            <div id="sidebar" class="column">
+                <div id="contact-icons" class="grid"></div>
             </div>
 
-            <div id="middle-column"> 
-                <div id="about" class="content-section"> 
-                    <h1> About Me </h1>   
-
-                    <div class="row">
-                        <div style="width:540px">
+            <div id="mainbar" class="column">
+                <section id="about" class="content-section">
+                    <h3> About Me </h3>
+                    <div id="my-info">
+                        <div id="autobiography">
                             <p> Hi! My name is Tiger Ji, and I'm currently pursuing a B.S. in Computer Science and Applied Mathematics at Brown University.  </p>
                             <p> My primary interests lie in AI/ML and Software Engineering. </p>
                             <p> Some of my other hobbies and passions include: </p> 
@@ -57,142 +68,236 @@
                                 <li> Word Hunt. With a high score of 55.1k and over 2500 wins, you'll be hard pressed to find a bigger WH fanatic than me. </li>
                             </ul> 
                         </div>            
-                        <img id="portrait" src="portrait.jpeg" width="420px" height="420px">
-                    </div>
-                </div>
-            
-                <div id="featured-projects" class="content-section">
-                    <h1> Featured Projects </h1>
-                    <div class="row" style="margin-bottom: 40px">
-                        <img src="background.jpeg" width="65%" style="border-radius: 10px;">
-                        <div class="featured-description" style="width: 35%;">  
-                            <h2> Sunflower Washateria </h2>
-                            <p> </p>
+                        <div>
+                            <img id="portrait" src="portrait.jpeg">
                         </div>
                     </div>
-                    <div class="row" style="margin-bottom: 40px">
-                        <div class="featured-description" style="width: 50%;"> 
-                            <h2> Word Hunt Solver </h2>
-                            <p> Find all solutions for a given Word Hunt game! This program uses a custom-built trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
-                            <p> Code is written with HTML, CSS, and JavaScript on the front-end along with Django and Python on the back-end. </p> 
+                </section>
+
+                <section id="featured-projects" class="content-section">
+                    <h3> Featured Projects </h3>
+                    <div class="featured-project row">
+                        <figure>
+                            <a href="todo.html">
+                                <img id="sunflower-image" class="featured-image" src="cssi.png">
+                            </a>
+                        </figure>
+                        <div id="sunflower-feature" class="featured-description">  
+                            <a href="todo.html">
+                                <h4> Sunflower Washateria </h4>
+                            </a>
+                            <p> Find all solutions for a given Word Hunt game! This program uses a custom trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
+                            <span class="row"> 
+                                <p> React, Express, Node, MongoDB </p>
+                                <a href="todo.html" class="project-icon">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a> 
+                            </span>
                         </div>
-                        <img src="background.jpeg" width="50%" style="border-radius: 10px;">
                     </div>
-                    <div class="row" style="margin-bottom: 40px">
-                        <img src="cssi.png" width="60%" style="border-radius: 10px;">
-                        <div class="featured-description" style="width:40%">
-                            <h2> Personal University Student Page </h2>
-                            <p> This university student page is a convenient tool for incoming freshmen, offering various features ranging from an integrated calendar to a search engine for nearby restaurants based on user preferences. </p>
-                            <p> Code is written with HTML, CSS, and JavaScript with Google FireBase for back-end functionality, and Gmail authentication is used to ensure confidentiality and usability on a per-user basis.</p> 
-                        </div>
-                    </div>
-                </div>
-            
-                <div id="other-projects" class="content-section"> 
-                    <h1 style="text-align: center;"> Other Notable Projects </h1>
-                    <div id="projects-grid">
-                        <div class="project-card">
-                            <h3> Search </h3>
-                            <p> Created a custom search engine that returns relevant results from a corpus of provided wiki pages. Queries are efficiently matched with relevant documents using Google's PageRank algorithm and a page's term-relevance score. </p>
-                            <div class="row" style="justify-content: right; align-items: center;">
-                                <p style="margin-right: auto;"> Python </p>
-                                <a class="project-card-icon">
+                    <div class="featured-project row">
+                        <div id="word-hunt-feature" class="featured-description">  
+                            <a href="todo.html">
+                                <h4> Word Hunt Solver </h4>
+                            </a>
+                            <p> Find all solutions for a given Word Hunt game! This program uses a custom trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
+                            <span class="row">
+                                <p> HTML, CSS, JS, Python, Django </p>
+                                <a href="todo.html" class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <h3> Travel Planner </h3>
-                            <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two Cities based on minimum cost or duration as well as maximal directness. </p>
-                            <div class="row" style="justify-content: right; align-items: center;">
-                                <p style="margin-right: auto;"> Java </p>
-                                <a class="project-card-icon">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <h3> Liquid Image Rescaling </h3>
-                            <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm that minimizes unwanted distortions. </p>
-                            <div class="row" style="justify-content: right; align-items: center;">
-                                <p style="margin-right: auto;"> Pyret </p>
-                                <a class="project-card-icon">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <h3> Decision Tree </h3>
-                            <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
-                            <div class="row" style="justify-content: right; align-items: center;">
-                                <p style="margin-right: auto;"> Java </p>
-                                <a class="project-card-icon">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <h3> Updater </h3>
-                            <p> Designed a custom "cursor" data structure enabling efficiently search, update, and multidirectional traversal operations on an immutable tree with arbitrary degree. </p>
-                            <div class="row" style="justify-content: right; align-items: center;">
-                                <p style="margin-right: auto;"> Pyret </p>
-                                <a class="project-card-icon">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <h3> My Portfolio </h3>
-                            <p> My personal website! In other words, the thing you're looking at right now. </p>
-                            <div class="row" style="justify-content: right; align-items: center;">
-                                <p style="margin-right: auto;"> HTML CSS JS jQuery </p>
-                                <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-card-icon">
+                                </a> 
+                                <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-icon">
                                     <i class="fa-brands fa-github"></i> 
                                 </a>
-                                <a class="project-card-icon">
+                            </span>
+                        </div>
+                        <figure>
+                            <a href="todo.html">
+                                <img id="word-hunt-image" class="featured-image" src="cssi.png">     
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="featured-project row">
+                        <figure>
+                            <a href="todo.html">
+                                <img id="cssi-image" class="featured-image" src="cssi.png">
+                            </a>
+                        </figure>
+                        <div id="cssi-feature" class="featured-description">  
+                            <a href="todo.html">
+                                <h4> Personal University Student Page </h4>
+                            </a>
+                            <p> This university student page is a convenient tool for incoming freshmen, offering various features ranging from an integrated calendar to a search engine for nearby restaurants based on user preferences. </p>
+                            <span class="row"> 
+                                <p> HTML, CSS, JS, Firebase </p>
+                                <a href="todo.html" class="project-icon">
+                                    <i class="fa-brands fa-github"></i> 
+                                </a> 
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="other-projects" class="content-section">
+                    <h3 style="text-align: center;"> Other Notable Projects </h3>
+                    <div id="other-projects-grid" class="grid">
+                        <div class="card column">
+                            <h5> Search </h5>
+                            <p> Created a search engine that efficiently returns relevant results from a corpus of wiki pages using a page's term-relevance score and Google's PageRank algorithm. </p>
+                            <div class="row down">
+                                <p> Python </p>
+                                <a class="project-icon right">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card column">
+                            <h5> Travel Planner </h5>
+                            <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two Cities based on minimum cost or duration as well as maximal directness. </p>
+                            <div class="row down">
+                                <p> Java </p>
+                                <a class="project-icon right">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card column">
+                            <h5> Liquid Image Scaling </h5>
+                            <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm minimizing unwanted distortions. </p>
+                            <div class="row down">
+                                <p> Pyret </p>
+                                <a class="project-icon right">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card column">
+                            <h5> Decision Tree </h5>
+                            <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
+                            <div class="row down">
+                                <p> Java </p>
+                                <a class="project-icon right">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card column">
+                            <h5> Updater </h5>
+                            <p> Designed a "cursor" data structure enabling efficient search, update, and multidirectional traversal operations on an immutable tree of arbitrary degree. </p>
+                            <div class="row down">
+                                <p> Pyret </p>
+                                <a class="project-icon right">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card column">
+                            <h5> My Portfolio </h5>
+                            <p> My personal website! In other words, the thing you're looking at right now. </p>
+                            <div class="row down">
+                                <p class="left"> HTML CSS JS jQuery </p>
+                                <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-icon">
+                                    <i class="fa-brands fa-github"></i> 
+                                </a>
+                                <a class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
-                    
-                <div id="qualifications" class="content-section"> 
-                    <h1 style="grid-column-start: span 2;"> Qualifications </h1>
-                    <div class="row" style="margin-right: auto;">
-                        <img src="brown.png" height="180px">
-                        <div style="margin-left: 15px;">
-                            <h2> Brown University </h2>
-                            <p> B.S. — Computer Science and Applied Mathematics </p>
-                            <p> GPA: 4.0 </p>
-                            <p> Relevant Coursework </p>
-                        </div>
-                    </div>
+                </section>
 
-                    <div style="display: grid; grid-template-rows: 60px 400px; grid-template-columns: 1fr 3fr;">
-                        <h2 style="grid-column-start: span 4"> Experience </h2>  
-                        <div>
-                            <ul style="margin-top: 0px;">
-                                <a onclick="showExperienceDescription('Google CSSI')">
-                                    <li> Google CSSI </li> 
-                                </a>
-                                <a onclick="showExperienceDescription('iCode')"> 
-                                    <li> iCode </li> 
-                                </a>
-                                <a onclick="showExperienceDescription('EnLiving Design')"> 
-                                    <li> EnLiving Design </li> 
-                                </a>
-                            </ul>
+                <section id="qualifications" class="content-section">
+                    <h3> Qualifications </h4>
+                    <div id="qualifications-container" class="row">
+                        <div id="education" class="row">
+                            <img id="brown-logo" src="brown.png">
+                            <div id="education-info">
+                                <h4> Brown University </h4>
+                                <p> B.S. — Computer Science and Applied Mathematics </p>
+                                <div class="row">
+                                    <a href="todo.html" class="button"> Relevant Coursework </a>
+                                </div>
+                            </div>
                         </div>
-                        <div id="experience-description"></div>
+                        <div id="experience">
+                            <h4> Experience </h4>  
+                            <div id="experience-grid">
+                                <div>
+                                    <ol class="experience-list">
+                                        <a onclick="showExperienceDescription('Google CSSI')">
+                                            <li id="cssi"> Google CSSI </li> 
+                                        </a>
+                                        <a onclick="showExperienceDescription('iCode')"> 
+                                            <li id="icode"> iCode </li> 
+                                        </a>
+                                        <a onclick="showExperienceDescription('EnLiving Design')"> 
+                                            <li id="enliving"> EnLiving Design </li> 
+                                        </a>
+                                    </ol>
+                                </div>
+                                <div id="experience-description" class="grid">
+                                    <div id="cssi-description" class="exp-description">
+                                        <h6>
+                                            CS Summer Institute @ Google
+                                        </h6>
+                                        <p> July 2021 — August 2021 </p>
+                                        <ul>
+                                            <li> Completed a project-based curriculum for HTML, CSS, JS, and Firebase led by Google developers </li>
+                                            <li> Configured 10+ projects to practice object-oriented programming, effective UI/UX, authorization and authentication, and Git </li>
+                                            <li> Developed a personalized “university student page” app, presented to Google engineers and community leaders (see <a href="#cssi-description"> Featured Projects! </a>) </li>
+                                        </ul>
+                                    </div>
+                                    <div id="icode-description" class="exp-description">
+                                        <h6>
+                                            Instructor @ iCode
+                                        </h6>
+                                        <p> August 2020 — July 2021 </p>
+                                        <ul>
+                                            <li> Planned and held open house demos for 100+ prospective students and families over the year </li>
+                                            <li> Taught weekly classes for various age ranges about concepts such as coding fundamentals in Scratch and basic web development in HTML </li>
+                                            <li> Led camps for 40+ hours/week on programming drones in Python, developing games with Construct 3, and using Raspberry Pi and circuits </li>
+                                        </ul> 
+                                    </div>
+                                    <div id="enliving-description" class="exp-description">
+                                        <h6>
+                                            Research Assistant @ EnLiving Design
+                                        </h6>
+                                        <p> May 2020 — August 2020 </p>
+                                        <ul>
+                                            <li> Read 100+ pages of literature about the utility of depth cameras in helping occupational therapists more accurately assess clinical sitting body balance </li>
+                                            <li> Coded a program in C# to track joint movement patterns using the Intel RealSense skeleton tracking SDK to update the previous code written for the discontinued Microsoft Kinect line </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </main>
+        
+        <footer class="column" style="align-items: center;">
+            <div id="contact-footer" class="grid">
+                <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon-footer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto: tiger_ji@brown.com" class="contact-icon-footer">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+                <a href="https://github.com/taiga-forestry" class="contact-icon-footer">
+                    <i class="fa-brands fa-github"></i> 
+                </a>
+                <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon-footer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <p id="outro"> 
+                <a href="tood.html"> taiga-forestry ♮ Tiger Ji ♮ tiger_ji@brown.edu </a>
+            </p>
+        </footer>
     </body>
 </html>
-
-
-
 
 
