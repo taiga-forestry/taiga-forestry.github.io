@@ -240,7 +240,7 @@ ul > li {
     grid-template-rows: 3fr 2fr;
     grid-template-columns: 1fr 4fr 1fr;
     justify-content: center;
-    background: url("assets/background.jpeg");
+    background: url("../assets/background.jpeg");
     background-size: cover;
     background-position: center bottom;
     transition: filter 0.2s linear;
@@ -347,17 +347,17 @@ figure {
         transition: color 0.2s linear;
     }
     #sunflower-feature { 
-        background: url("assets/transparent-cssi.png"); 
+        background: url("../assets/transparent-cssi.png"); 
         background-size: cover;
         background-position: center center;
     }
     #word-hunt-feature { 
-        background: url("assets/transparent-cssi.png"); 
+        background: url("../assets/transparent-cssi.png"); 
         background-size: cover;
         background-position: center center;
     }
     #cssi-feature { 
-        background: url("assets/transparent-cssi.png"); 
+        background: url("../assets/transparent-cssi.png"); 
         background-size: cover;
         background-position: center center;
     }
