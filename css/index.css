@@ -9,7 +9,7 @@ html {
     --light-green: rgb(47,74,62);
     --dark-green: rgb(34,54,45);
     --nav-height: 7rem;
-    --shadow: 0px 0px 25px 0px var(--dark-blue);
+    --shadow: 0px 0px 25px 0px var(--darker-blue);
     scroll-behavior: smooth; 
     overflow-x: hidden;
     font-size: 62.5%;
