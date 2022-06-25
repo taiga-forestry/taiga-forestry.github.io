@@ -1,33 +1,38 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="Tiger Ji's Portfolio">
 		<meta name="keywords" content="Tiger Ji, Brown University">
-    
         <title> Tiger Ji's Portfolio </title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="test.css">
+
+        <!-- personal styles and google fonts + icons -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
         </style>
 
-        <script src="test.js"></script>
+        <!-- personal scripts, fontawesome, and jquery -->
+        <script src="js/index.js"></script>
         <script src="https://kit.fontawesome.com/35850cf6ad.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
 
     <body>
         <nav id="nav-bar" class="row">
-            <a href="#home-page" class="nav-bar-item left" onclick="scrollTo(0, 0); location.reload();"> TJ </a>
+            <a href="#home-page" class="nav-bar-item left" onclick="reloadPage()"> TJ </a>
             <a href="#about" class="nav-bar-item"> About </a>
             <a href="#featured-projects" class="nav-bar-item"> Projects </a>
             <a href="#qualifications" class="nav-bar-item"> Qualifications </a>
-            <a href="#contact" id="nav-bar-resume" class="nav-bar-item"> Resume </a>
-            <i id="nav-dropdown" class="nav-bar-item material-symbols-outlined"> <a onclick="openNavModal()"> menu </a> </i>
+            <a href="#contact" id="nav-bar-end" class="nav-bar-item"> Resume </a>
+            <i id="nav-dropdown" class="nav-bar-item material-symbols-outlined"> 
+                <a onclick="openNavModal()"> menu </a> 
+            </i>
         </nav>
 
         <nav id="nav-modal" class="column">
@@ -35,7 +40,7 @@
             <a href="#about" class="nav-modal-item" onclick="closeNavModal()"> About </a>
             <a href="#featured-projects" class="nav-modal-item" onclick="closeNavModal()"> Projects </a>
             <a href="#qualifications" class="nav-modal-item" onclick="closeNavModal()"> Qualifications </a>
-            <a href="#contact" class="nav-modal-item" id="nav-modal-resume" onclick="closeNavModal()"> Resume </a>
+            <a href="#contact" class="nav-modal-item" id="nav-modal-end" onclick="closeNavModal()"> Resume </a>
         </nav>
 
         <header id="home-page" class="grid">
@@ -44,7 +49,7 @@
                     <span id="hello"></span>
                     <span id="my-name"></span>
                 </h1>
-                <h2 id="welcome"> </h2>
+                <h2 id="welcome"></h2>
             </div>
         </header>
 
@@ -69,7 +74,7 @@
                             </ul> 
                         </div>            
                         <div>
-                            <img id="portrait" src="portrait.jpeg">
+                            <img id="portrait" src="assets/portrait.jpeg">
                         </div>
                     </div>
                 </section>
@@ -79,7 +84,7 @@
                     <div class="featured-project row">
                         <figure>
                             <a href="todo.html">
-                                <img id="sunflower-image" class="featured-image" src="cssi.png">
+                                <img id="sunflower-image" class="featured-image" src="assets/cssi.png">
                             </a>
                         </figure>
                         <div id="sunflower-feature" class="featured-description">  
@@ -113,14 +118,14 @@
                         </div>
                         <figure>
                             <a href="todo.html">
-                                <img id="word-hunt-image" class="featured-image" src="cssi.png">     
+                                <img id="word-hunt-image" class="featured-image" src="assets/cssi.png">     
                             </a>
                         </figure>
                     </div>
                     <div class="featured-project row">
                         <figure>
                             <a href="todo.html">
-                                <img id="cssi-image" class="featured-image" src="cssi.png">
+                                <img id="cssi-image" class="featured-image" src="assets/cssi.png">
                             </a>
                         </figure>
                         <div id="cssi-feature" class="featured-description">  
@@ -144,65 +149,65 @@
                         <div class="card column">
                             <h5> Search </h5>
                             <p> Created a search engine that efficiently returns relevant results from a corpus of wiki pages using a page's term-relevance score and Google's PageRank algorithm. </p>
-                            <div class="row down">
+                            <span class="row down">
                                 <p> Python </p>
                                 <a class="project-icon right">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                            </div>
+                            </span>
                         </div>
                         <div class="card column">
                             <h5> Travel Planner </h5>
                             <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two Cities based on minimum cost or duration as well as maximal directness. </p>
-                            <div class="row down">
+                            <span class="row down">
                                 <p> Java </p>
                                 <a class="project-icon right">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                            </div>
+                            </span>
                         </div>
                         <div class="card column">
                             <h5> Liquid Image Scaling </h5>
                             <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm minimizing unwanted distortions. </p>
-                            <div class="row down">
+                            <span class="row down">
                                 <p> Pyret </p>
                                 <a class="project-icon right">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                            </div>
+                            </span>
                         </div>
                         <div class="card column">
                             <h5> Decision Tree </h5>
                             <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
-                            <div class="row down">
+                            <span class="row down">
                                 <p> Java </p>
                                 <a class="project-icon right">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                            </div>
+                            </span>
                         </div>
                         <div class="card column">
                             <h5> Updater </h5>
                             <p> Designed a "cursor" data structure enabling efficient search, update, and multidirectional traversal operations on an immutable tree of arbitrary degree. </p>
-                            <div class="row down">
+                            <span class="row down">
                                 <p> Pyret </p>
                                 <a class="project-icon right">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                            </div>
+                            </span>
                         </div>
                         <div class="card column">
                             <h5> My Portfolio </h5>
                             <p> My personal website! In other words, the thing you're looking at right now. </p>
-                            <div class="row down">
-                                <p class="left"> HTML CSS JS jQuery </p>
+                            <span class="row down">
+                                <p class="left"> HTML, CSS, JS, jQuery </p>
                                 <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-icon">
                                     <i class="fa-brands fa-github"></i> 
                                 </a>
                                 <a class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                            </div>
+                            </span>
                         </div>
                     </div>
                 </section>
@@ -211,7 +216,7 @@
                     <h3> Qualifications </h4>
                     <div id="qualifications-container" class="row">
                         <div id="education" class="row">
-                            <img id="brown-logo" src="brown.png">
+                            <img id="brown-logo" src="assets/brown.png">
                             <div id="education-info">
                                 <h4> Brown University </h4>
                                 <p> B.S. — Computer Science and Applied Mathematics </p>
@@ -236,19 +241,17 @@
                                         </a>
                                     </ol>
                                 </div>
-                                <div id="experience-description" class="grid">
-                                    <div id="cssi-description" class="exp-description">
-                                        <h6>
-                                            CS Summer Institute @ Google
-                                        </h6>
+                                <div id="experience-descriptions" class="grid">
+                                    <div id="cssi-description" class="experience-description">
+                                        <h6> CS Summer Institute @ Google </h6>
                                         <p> July 2021 — August 2021 </p>
                                         <ul>
                                             <li> Completed a project-based curriculum for HTML, CSS, JS, and Firebase led by Google developers </li>
                                             <li> Configured 10+ projects to practice object-oriented programming, effective UI/UX, authorization and authentication, and Git </li>
-                                            <li> Developed a personalized “university student page” app, presented to Google engineers and community leaders (see <a href="#cssi-description"> Featured Projects! </a>) </li>
+                                            <li> Developed a personalized “university student page” app, presented to Google engineers and community leaders (see <a href="#cssi-description"> Featured Projects! </a>)</li>
                                         </ul>
                                     </div>
-                                    <div id="icode-description" class="exp-description">
+                                    <div id="icode-description" class="experience-description">
                                         <h6>
                                             Instructor @ iCode
                                         </h6>
@@ -259,7 +262,7 @@
                                             <li> Led camps for 40+ hours/week on programming drones in Python, developing games with Construct 3, and using Raspberry Pi and circuits </li>
                                         </ul> 
                                     </div>
-                                    <div id="enliving-description" class="exp-description">
+                                    <div id="enliving-description" class="experience-description">
                                         <h6>
                                             Research Assistant @ EnLiving Design
                                         </h6>
@@ -277,7 +280,7 @@
             </div>
         </main>
         
-        <footer class="column" style="align-items: center;">
+        <footer class="column">
             <div id="contact-footer" class="grid">
                 <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon-footer">
                     <i class="fab fa-instagram"></i>

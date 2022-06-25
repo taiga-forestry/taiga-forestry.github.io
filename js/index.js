@@ -14,6 +14,12 @@ window.onload = (event) => {
     showExperienceDescription("Google CSSI");
 }
 
+// when TJ in navbar is clicked
+const reloadPage = () => {
+    scrollTo(0, 0); 
+    location.reload();
+}
+
 const loadPage = () => {
     if (window.scrollY >= window.innerHeight) {
         let offset = Math.min(((window.scrollY / window.innerHeight) * 500), 2000);
@@ -27,7 +33,7 @@ const loadPage = () => {
 }
 
 const startTransitions = (offset) => {
-    document.getElementById("nav-bar").classList.add("nav-hidden");
+    document.getElementById("nav-bar").classList.add("hidden");
     setTimeout(addHello, offset);
     setTimeout(addName, 1250 + offset);
     setTimeout(addPortfolio, 2500 + offset);
@@ -52,7 +58,7 @@ const addPortfolio = () => {
 }
 
 const addNavBar = () => {
-    document.getElementById("nav-bar").classList.remove("nav-hidden");
+    document.getElementById("nav-bar").classList.remove("hidden");
     document.getElementById("nav-bar").classList.add("fade");
 }
 
@@ -76,57 +82,13 @@ const addContact = () => {
 const toggleNavBar = () => {
     if (navScrollable) {
         if (window.scrollY > 25 && lastScrollY < window.scrollY) {
-            document.getElementById("nav-bar").classList.add("nav-hidden");
+            document.getElementById("nav-bar").classList.add("hidden");
         } 
         else {
-            document.getElementById("nav-bar").classList.remove("nav-hidden");
+            document.getElementById("nav-bar").classList.remove("hidden");
         }
 
         lastScrollY = window.scrollY;
-    }
-}
-
-const showContent = () => {
-    let allContent = document.querySelectorAll(".content-section");
-
-    for (var i = 0; i < allContent.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = allContent[i].getBoundingClientRect().top;
-        let elementVisible = 150;
-
-        if (elementTop < windowHeight - elementVisible) {
-            allContent[i].classList.add("reveal");
-        } 
-    }
-}
-
-const blurHome = () => {
-    let distanceFromTop = $(this).scrollTop();
-    let blurFactor = 60 * window.innerHeight / distanceFromTop;
-    
-    if (distanceFromTop < window.innerHeight && navModalState == "closed") {
-        $("#home-page").css("-webkit-filter", "blur("+distanceFromTop/blurFactor+"px)");
-    }
-}
-
-const showExperienceDescription = (organization) => {
-    document.getElementById(lastSelected).classList.remove("ol-selected");
-    document.getElementById(lastSelected + "-description").classList.remove("reveal");
-
-    if (organization == "Google CSSI") {
-        lastSelected = "cssi";
-        document.getElementById("cssi").classList.add("ol-selected");
-        document.getElementById("cssi-description").classList.add("reveal");
-    }
-    else if (organization == "iCode") {
-        lastSelected = "icode";
-        document.getElementById("icode").classList.add("ol-selected");
-        document.getElementById("icode-description").classList.add("reveal");
-    }
-    else if (organization == "EnLiving Design") {
-        lastSelected = "enliving";
-        document.getElementById("enliving").classList.add("ol-selected");
-        document.getElementById("enliving-description").classList.add("reveal");
     }
 }
 
@@ -153,5 +115,47 @@ const unblurNonModal = () => {
 }
 
 window.matchMedia("(min-width: 768.5px)").addListener(() => {
+    navModalState = "closed";
     unblurNonModal();
 });
+
+const showContent = () => {
+    let allContent = document.querySelectorAll(".content-section");
+
+    for (let i = 0; i < allContent.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = allContent[i].getBoundingClientRect().top;
+        let elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            allContent[i].classList.add("reveal");
+        } 
+    }
+}
+
+const blurHome = () => {
+    let distanceFromTop = $(this).scrollTop();
+    let blurFactor = 60 * window.innerHeight / distanceFromTop;
+    
+    if (distanceFromTop < window.innerHeight && navModalState == "closed") {
+        $("#home-page").css("-webkit-filter", "blur("+distanceFromTop/blurFactor+"px)");
+    }
+}
+
+const showExperienceDescription = (organization) => {
+    document.getElementById(lastSelected).classList.remove("experience-selected");
+    document.getElementById(lastSelected + "-description").classList.remove("reveal");
+
+    if (organization == "Google CSSI") {
+        lastSelected = "cssi";
+    }
+    else if (organization == "iCode") {
+        lastSelected = "icode";
+    }
+    else if (organization == "EnLiving Design") {
+        lastSelected = "enliving";
+    }
+
+    document.getElementById(lastSelected).classList.add("experience-selected");
+    document.getElementById(lastSelected + "-description").classList.add("reveal");
+}
