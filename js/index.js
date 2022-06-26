@@ -105,7 +105,7 @@ const closeNavModal = () => {
 const blurNonModal = () => {
     $("#nav-modal").addClass("reveal");
     $("#home-page").css("-webkit-filter", "blur(10px)");
-    $("page-content").addClass("blur");
+    $("#page-content").addClass("blur");
 }
 
 const unblurNonModal = () => {
