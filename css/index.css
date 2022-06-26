@@ -11,7 +11,7 @@ html {
     --nav-height: 7rem;
     --shadow: 0px 0px 25px 0px var(--darker-blue);
     scroll-behavior: smooth; 
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-size: 62.5%;
     font-family: 'Source Sans Pro', sans-serif;
     color: var(--off-white);
@@ -190,18 +190,19 @@ ul > li {
 #nav-modal {
     width: 40%;
     height: 100%; 
-    z-index: 20;
+    z-index: -1;
     position: fixed;
-    right: -50%;
+    right: -40%;
     top: 0%;
     padding: 25px;
     background-color: var(--dark-green);
     box-shadow: var(--shadow);
     opacity: 0;
-    transition: all 0.4s linear;
+    transition: all 0.2s linear;
 }
 
 #nav-modal.reveal {
+    z-index: 20;
     right: 0%;
     opacity: 1;
 }
@@ -271,7 +272,7 @@ ul > li {
     padding: 5rem;
     opacity: 0;
     transform: translateY(10rem);
-    transition: 1s all ease;
+    transition: 1s all linear;
 }
 
 .content-section.reveal {
@@ -335,7 +336,35 @@ figure {
     border-radius: 10px;
 }
 
-@media screen and (max-width: 992.5px) {
+@media screen and (max-width: 576.5px) {
+    #featured-projects { display: flex; flex-direction: column; }
+    .featured-image, figure { display: none; }
+    .featured-description {
+        width: 55vw;
+        min-height: 40vw;
+        padding: 6.4rem;
+        padding-top: 6rem;
+        box-shadow: var(--shadow);
+        transition: color 0.2s linear;
+    }
+    #sunflower-feature { 
+        background: url("../assets/transparent-cssi.png"); 
+        background-size: cover;
+        background-position: center center;
+    }
+    #word-hunt-feature { 
+        background: url("../assets/transparent-cssi.png"); 
+        background-size: cover;
+        background-position: center center;
+    }
+    #cssi-feature { 
+        background: url("../assets/transparent-cssi.png"); 
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media screen and (min-width: 576.5px) and (max-width: 992.5px) {
     #featured-projects { display: flex; flex-direction: column; }
     .featured-image, figure { display: none; }
     .featured-description {
@@ -450,7 +479,7 @@ figure {
     grid-row: 1;
     grid-column: 1;
     opacity: 0;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s linear;
 }
 
 .experience-description.reveal {
@@ -458,7 +487,23 @@ figure {
     z-index: 5;
 }
 
-@media screen and (max-width: 768.5px) {
+@media screen and (max-width: 576.5px) {
+    #qualifications-container {
+        display: flex;
+        flex-direction: column;
+    }
+    #education {
+        width: min(400px, 80vw);
+        margin-bottom: 3em;
+    }
+    #education-info { padding-left: 1.6em; }
+    #experience {
+        width: min(600px, 80vw);
+        min-height: 500px;
+    }
+}
+
+@media screen and (min-width: 576.5px) and (max-width: 768.5px) {
     #qualifications-container {
         display: flex;
         flex-direction: column;
