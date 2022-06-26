@@ -1,7 +1,7 @@
 let lastScrollY = window.scrollY;
 let navScrollable = false;
-let lastSelected = "cssi";
 let navModalState = "closed";
+let lastExperienceSelected = "#cssi";
 
 window.onscroll = (event) => {
     toggleNavBar();
@@ -33,7 +33,7 @@ const loadPage = () => {
 }
 
 const startTransitions = (offset) => {
-    document.getElementById("nav-bar").classList.add("hidden");
+    $("#nav-bar").addClass("hidden");
     setTimeout(addHello, offset);
     setTimeout(addName, 1250 + offset);
     setTimeout(addPortfolio, 2500 + offset);
@@ -43,27 +43,27 @@ const startTransitions = (offset) => {
 }
 
 const addHello = () => {
-    document.getElementById("hello").innerHTML = "Hello, ";
-    document.getElementById("hello").classList.add("fade")
+    $("#hello").html("Hello, ");
+    $("#hello").addClass("fade");
 }
 
 const addName = () => {
-    document.getElementById("my-name").innerHTML = "I'm Tiger.";
-    document.getElementById("my-name").classList.add("fade")
+    $("#my-name").html("I'm Tiger.");
+    $("#my-name").addClass("fade");
 }
 
 const addPortfolio = () => {
-    document.getElementById("welcome").innerHTML = "Welcome to my portfolio.";
-    document.getElementById("welcome").classList.add("fade")
+    $("#welcome").html("Welcome to my portfolio.");
+    $("#welcome").addClass("fade");
 }
 
 const addNavBar = () => {
-    document.getElementById("nav-bar").classList.remove("hidden");
-    document.getElementById("nav-bar").classList.add("fade");
+    $("#nav-bar").removeClass("hidden");
+    $("#nav-bar").addClass("fade");
 }
 
 const addContact = () => {
-    document.getElementById("contact-icons").innerHTML = `
+    $("#contact-icons").html(`
         <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon">
             <i class="fab fa-instagram"></i>
         </a>
@@ -75,17 +75,17 @@ const addContact = () => {
         </a>
         <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon">
             <i class="fa-brands fa-linkedin-in"></i>
-        </a>`
-    document.getElementById("contact-icons").classList.add("fade");
+        </a>`);
+        $("#contact-icons").addClass("fade");
 }
 
 const toggleNavBar = () => {
     if (navScrollable) {
         if (window.scrollY > 25 && lastScrollY < window.scrollY) {
-            document.getElementById("nav-bar").classList.add("hidden");
+            $("#nav-bar").addClass("hidden");
         } 
         else {
-            document.getElementById("nav-bar").classList.remove("hidden");
+            $("#nav-bar").removeClass("hidden");
         }
 
         lastScrollY = window.scrollY;
@@ -103,15 +103,15 @@ const closeNavModal = () => {
 }
 
 const blurNonModal = () => {
-    document.getElementById("nav-modal").classList.add("reveal");
+    $("#nav-modal").addClass("reveal");
     $("#home-page").css("-webkit-filter", "blur(10px)");
-    document.getElementById("page-content").classList.add("blur");
+    $("page-content").addClass("blur");
 }
 
 const unblurNonModal = () => {
-    document.getElementById("nav-modal").classList.remove("reveal");
+    $("#nav-modal").removeClass("reveal");
     blurHome();
-    document.getElementById("page-content").classList.remove("blur");
+    $("#page-content").removeClass("blur");
 }
 
 window.matchMedia("(min-width: 768.5px)").addListener(() => {
@@ -143,19 +143,19 @@ const blurHome = () => {
 }
 
 const showExperienceDescription = (organization) => {
-    document.getElementById(lastSelected).classList.remove("experience-selected");
-    document.getElementById(lastSelected + "-description").classList.remove("reveal");
+    $(lastExperienceSelected).removeClass("experience-selected");
+    $(lastExperienceSelected + "-description").removeClass("reveal");
 
     if (organization == "Google CSSI") {
-        lastSelected = "cssi";
+        lastExperienceSelected = "#cssi";
     }
     else if (organization == "iCode") {
-        lastSelected = "icode";
+        lastExperienceSelected = "#icode";
     }
     else if (organization == "EnLiving Design") {
-        lastSelected = "enliving";
+        lastExperienceSelected = "#enliving";
     }
 
-    document.getElementById(lastSelected).classList.add("experience-selected");
-    document.getElementById(lastSelected + "-description").classList.add("reveal");
+    $(lastExperienceSelected).addClass("experience-selected");
+    $(lastExperienceSelected + "-description").addClass("reveal");
 }
