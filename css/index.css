@@ -446,23 +446,18 @@ figure {
     padding: 1.2em;
 }
 
-#experience-grid {
-    display: grid; 
-    grid-template-columns: 160px 1fr;
-}
-
 #experience-descriptions {
     grid-template-rows: 1fr;
     grid-template: 1fr;
     padding-left: 2em;
 }
 
-.experience-list {
+#experience-list {
     font-size: 1.9em;
     border-left: 1.5px solid var(--transparent-aqua);
 }
 
-.experience-list li {
+#experience-list li {
     padding: 10px;
     padding-left: 20px;
     line-height: 1.2em;
@@ -501,6 +496,7 @@ figure {
         width: min(600px, 80vw);
         min-height: 500px;
     }
+    #experience-grid { grid-template-columns: 125px 1fr; }
 }
 
 @media screen and (min-width: 576.5px) and (max-width: 768.5px) {
@@ -517,6 +513,7 @@ figure {
         width: min(600px, 80vw);
         height: clamp(300px, calc(1068px - 100vw), 600px);
     }
+    #experience-grid { grid-template-columns: 160px 1fr; }
 }
 
 @media screen and (min-width: 768.5px) and (max-width: 992.5px) {
@@ -530,6 +527,7 @@ figure {
     }
     #education-info { padding-left: 1.6em; }
     #experience { height: clamp(275px, calc(1267px - 100vw), 325px); }
+    #experience-grid { grid-template-columns: 160px 1fr; }
 }
 
 @media screen and (min-width: 992.5px) {
@@ -539,6 +537,7 @@ figure {
         height: clamp(360px, calc(1800px - 100vw), 480px);
         padding: 1.2em; 
     }
+    #experience-grid { grid-template-columns: 160px 1fr; }
 }
 
 
