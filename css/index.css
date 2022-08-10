@@ -398,7 +398,7 @@ figure {
     .featured-image, figure {
         --featured-image-width: min(750px, 52vw);
         width: var(--featured-image-width);
-        height: min(calc(var(--featured-image-width) / 1.6), 32.5vw); 
+        height: min(calc(var(--featured-image-width) / 1.77), 29.25vw); 
     }
     .featured-image:hover { opacity: 85%; }   
     .featured-description { width: min(350px, 23.25vw); padding-top: .75vw; }
