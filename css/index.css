@@ -349,7 +349,7 @@ figure {
         transition: color 0.2s linear;
     }
     #sunflower-feature { 
-        background: url("../assets/transparent-cssi.png"); 
+        background: url("../assets/transparent-sunflower.png"); 
         background-size: cover;
         background-position: center center;
     }
@@ -378,7 +378,7 @@ figure {
         transition: color 0.2s linear;
     }
     #sunflower-feature { 
-        background: url("../assets/transparent-cssi.png"); 
+        background: url("../assets/transparent-sunflower.png"); 
         background-size: cover;
         background-position: center center;
     }
