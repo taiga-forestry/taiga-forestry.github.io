@@ -97,9 +97,17 @@ a {
     transition: color 0.2s linear;
 }
 
-a:hover {
-    color: var(--aqua);
-    cursor: pointer;
+@media screen and (max-width: 576.5px) {
+    a:active {
+        color: var(--aqua);
+    }
+}
+
+@media screen and (min-width: 576.5px) {
+    a:hover {
+        color: var(--aqua);
+        cursor: pointer;
+    }
 }
 
 em {
@@ -125,9 +133,18 @@ ul > li {
     transition: all 0.2s linear;
 }
 
-.button:hover {
-    border: 1px solid var(--aqua);
-    background-color: var(--transparent-aqua);
+@media screen and (max-width: 576.5px) {
+    .button:active {
+        border: 1px solid var(--aqua);
+        background-color: var(--transparent-aqua);
+    }    
+}
+
+@media screen and (min-width: 576.5px) {
+    .button:hover {
+        border: 1px solid var(--aqua);
+        background-color: var(--transparent-aqua);
+    }    
 }
 
 .card {
@@ -594,8 +611,10 @@ figure {
     transition: transform 0.2s linear;
 }
 
-.contact-icon:hover, .contact-icon-footer:hover {
-    transform: translate(0rem, -0.5rem);
+@media screen and (min-width: 576.5px) {
+    .contact-icon:hover, .contact-icon-footer:hover {
+        transform: translate(0rem, -0.5rem);
+    }
 }
 
 .project-icon {
