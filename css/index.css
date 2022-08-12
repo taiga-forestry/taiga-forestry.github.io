@@ -32,17 +32,53 @@ h2 {
 }
 
 h3 {
-    font-size: 4.8em;
-    margin-bottom: 3rem;
+    font-size: clamp(3em, 6vw, 4.6em);
+    margin-bottom: 3.2rem;
+    overflow: hidden;
+}
+
+h3.line-center {
+    text-align: center;
+}
+
+h3.line-right {
+    text-align: left;
+}
+
+h3.line-center:before, h3.line-center:after, h3.line-right:after {
+    background-color: var(--off-white);
+    content: "";
+    display: inline-block;
+    height: 0.7px;
+    position: relative;
+    vertical-align: middle;
+}
+
+h3.line-center:before {
+    right: 0.25em;
+    margin-left: -50%;
+    width: 50%;
+}
+
+h3.line-center:after {
+    left: 0.25em;
+    margin-right: -50%;
+    width: 50%;
+}
+
+h3.line-right:after {
+    left: 0.25em;
+    margin-right: -100%;
+    width: 70%;
 }
 
 h4 {
-    font-size: 3.2em;
+    font-size: clamp(2.8em, 3vw, 3.2em);
     margin-bottom: 2.4rem;
 }
 
 h5 {
-    font-size: 2.6em;
+    font-size: clamp(2.4em, 2.75vw, 2.6em);
     margin-bottom: 2.4rem;
 }
 
@@ -188,17 +224,17 @@ ul > li {
 }
 
 #nav-modal {
-    width: 40%;
+    width: 45%;
     height: 100%; 
     z-index: -1;
     position: fixed;
-    right: -40%;
+    right: -45%;
     top: 0%;
     padding: 25px;
     background-color: var(--dark-green);
     box-shadow: var(--shadow);
     opacity: 0;
-    transition: all 0.2s linear;
+    transition: all 0.25s ease-in-out;
 }
 
 #nav-modal.reveal {
@@ -217,6 +253,7 @@ ul > li {
 .nav-modal-item {
     font-size: 2.25em;
     padding: 3.25rem;
+    padding-left: 2rem;
     border-bottom: 0.5px solid var(--off-white);
 }
 
@@ -340,10 +377,10 @@ figure {
     #featured-projects { display: flex; flex-direction: column; }
     .featured-image, figure { display: none; }
     .featured-description {
-        width: 55vw;
+        width: 50vw;
         min-height: 40vw;
-        padding: 6.4rem;
-        padding-top: 6rem;
+        padding: 5rem;
+        /* padding-top: 6rem; */
         border-radius: 10px;
         box-shadow: var(--shadow);
         transition: color 0.2s linear;
@@ -414,7 +451,7 @@ figure {
 }
 
 @media screen and (max-width: 576.5px) {
-    #other-projects-grid { grid-template-rows: repeat(6, minmax(300px, 1fr)); }
+    #other-projects-grid { grid-template-rows: repeat(6, minmax(250px, 300px)); }
 }
 
 @media screen and (min-width: 576.5px) and (max-width: 768.5px) {
