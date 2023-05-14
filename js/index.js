@@ -64,16 +64,16 @@ const addNavBar = () => {
 
 const addContact = () => {
     $("#contact-icons").html(`
-        <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon">
+        <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon" target="_blank">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="mailto: tiger_ji@brown.com" class="contact-icon">
+        <a href="mailto: tiger_ji@brown.com" class="contact-icon" target="_blank">
             <i class="fa-regular fa-envelope"></i>
         </a>
-        <a href="https://github.com/taiga-forestry" class="contact-icon">
+        <a href="https://github.com/taiga-forestry" class="contact-icon" target="_blank">
             <i class="fa-brands fa-github"></i> 
         </a>
-        <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon">
+        <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon" target="_blank">
             <i class="fa-brands fa-linkedin-in"></i>
         </a>`);
         $("#contact-icons").addClass("fade");
