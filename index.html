@@ -42,16 +42,18 @@
             <a href="#qualifications" class="nav-modal-item" onclick="closeNavModal()"> Qualifications </a>
             <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" class="nav-modal-item" id="nav-modal-end" target="_blank" onclick="closeNavModal()"> Resume </a>
         </nav>
-
-        <header id="home-page" class="grid">
-            <div style="grid-row-start: 2; grid-column-start: 2;">
-                <h1 id="greeting">
-                    <span id="hello"></span>
-                    <span id="my-name"></span>
-                </h1>
-                <h2 id="welcome"></h2>
-            </div>
-        </header>
+        
+        <div style="background-color: rgb(15,30,37);">
+            <header id="home-page" class="grid">
+                <div style="grid-row-start: 2; grid-column-start: 2;">
+                    <h1 id="greeting">
+                        <span id="hello"></span>
+                        <span id="my-name"></span>
+                    </h1>
+                    <h2 id="welcome"></h2>
+                </div>
+            </header>
+        </div>
 
         <main id="page-content" class="grid">
             <div id="sidebar" class="column">
@@ -63,14 +65,14 @@
                     <h3 class="line-right"> About Me </h3>
                     <div id="my-info">
                         <div id="autobiography">
-                            <p> Hi! My name is Tiger Ji, and I'm currently pursuing a B.S. in Computer Science and Applied Mathematics at Brown University.  </p>
+                            <p> Hi there! My name is Tiger Ji, and I'm currently pursuing a B.S. in Computer Science and Applied Mathematics at Brown University. </p>
                             <p> My primary interests lie in AI/ML and Software Engineering. </p>
                             <p> Some of my other hobbies and passions include: </p> 
                             <ul>
                                 <li> Breakdance! I'm the Dance Captain of Ground Breakin', Brown's premier breaking club — you might catch a glimpse of me spinning on my head if you drop by one of our practices. </li>
                                 <li> Classical Music — I've played violin and piano for over 8 years, and I'm a current member of the Brown University Orchestra. </li>
                                 <li> Basketball is my favorite sport, and on any given day you'll likely find me playing a pickup game or obsessing over NBA analytics. </li>
-                                <li> Word Hunt. With a high score of 55.1k and over 2500 wins, you'll be hard pressed to find a bigger WH fanatic than me. </li>
+                                <li> Word Hunt. With a high score of 55.1k and over 2,500 wins, you'll be hard pressed to find a bigger WH fanatic than me. </li>
                             </ul> 
                         </div>            
                         <div>
@@ -81,6 +83,50 @@
 
                 <section id="featured-projects" class="content-section">
                     <h3 class="line-right"> Featured Projects </h3>
+                    <div class="featured-project row">
+                        <figure>
+                            <a href="https://neuraldecompiler.pythonanywhere.com/" target="_blank">
+                                <img id="cssi-image" class="featured-image" src="assets/cssi.png">
+                            </a>
+                        </figure>
+                        <div id="cssi-feature" class="featured-description">  
+                            <a href="https://neuraldecompiler.pythonanywhere.com/" target="_blank">
+                                <h4> NeuralDecompiler </h4>
+                            </a>
+                            <p> A state-of-the-art, transformer-based neural network trained on 10,000+ files and 5,000,000+ parameters, capable of translating low-level x86-64 assembly instructions to human-readable C programs. </p>
+                            <span class="row"> 
+                                <p> Python, TensorFlow, Flask </p>
+                                <a href="https://neuraldecompiler.pythonanywhere.com/" class="project-icon" target="_blank">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://neuraldecompiler.pythonanywhere.com/" class="project-icon" target="_blank">
+                                    <i class="fa-brands fa-github"></i> 
+                                </a> 
+                            </span>
+                        </div>
+                    </div>
+                    <div class="featured-project row">
+                        <div id="word-hunt-feature" class="featured-description">  
+                            <a href="https://whsolver.pythonanywhere.com/" target="_blank">
+                                <h4> Word Hunt Solver </h4>
+                            </a>
+                            <p> Find all solutions for a given Word Hunt game! This program uses a custom trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
+                            <span class="row">
+                                <p> Python, Flask </p>
+                                <a href="https://whsolver.pythonanywhere.com/" class="project-icon" target="_blank">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a> 
+                                <a href="https://github.com/taiga-forestry/Word-Hunt-Solver" class="project-icon" target="_blank">
+                                    <i class="fa-brands fa-github"></i> 
+                                </a>
+                            </span>
+                        </div>
+                        <figure>
+                            <a href="https://whsolver.pythonanywhere.com/" target="_blank">
+                                <img id="word-hunt-image" class="featured-image" src="assets/word-hunt.png">     
+                            </a>
+                        </figure>
+                    </div>
                     <div class="featured-project row">
                         <figure>
                             <a href="https://sunflower-washateria.netlify.app/" target="_blank">
@@ -100,78 +146,37 @@
                             </span>
                         </div>
                     </div>
-                    <div class="featured-project row">
-                        <div id="word-hunt-feature" class="featured-description">  
-                            <a href="https://tiger-ji-word-hunt-solver.herokuapp.com/" target="_blank">
-                                <h4> Word Hunt Solver </h4>
-                            </a>
-                            <p> Find all solutions for a given Word Hunt game! This program uses a custom trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
-                            <span class="row">
-                                <p> HTML, CSS, JS, Python, Flask </p>
-                                <a href="https://tiger-ji-word-hunt-solver.herokuapp.com/" class="project-icon" target="_blank">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a> 
-                                <a href="https://github.com/taiga-forestry/Word-Hunt-Solver" class="project-icon" target="_blank">
-                                    <i class="fa-brands fa-github"></i> 
-                                </a>
-                            </span>
-                        </div>
-                        <figure>
-                            <a href="https://tiger-ji-word-hunt-solver.herokuapp.com/" target="_blank">
-                                <img id="word-hunt-image" class="featured-image" src="assets/word-hunt.png">     
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="featured-project row">
-                        <figure>
-                            <a href="https://github.com/taiga-forestry/cssi-final" target="_blank">
-                                <img id="cssi-image" class="featured-image" src="assets/cssi.png">
-                            </a>
-                        </figure>
-                        <div id="cssi-feature" class="featured-description">  
-                            <a href="https://github.com/taiga-forestry/cssi-final" target="_blank">
-                                <h4> Personal University Student Page </h4>
-                            </a>
-                            <p> This university student page is a convenient tool for incoming freshmen, offering various features ranging from an integrated calendar to a search engine for nearby restaurants based on user preferences. </p>
-                            <span class="row"> 
-                                <p> HTML, CSS, JS, Firebase </p>
-                                <a href="https://github.com/taiga-forestry/cssi-final" class="project-icon" target="_blank">
-                                    <i class="fa-brands fa-github"></i> 
-                                </a> 
-                            </span>
-                        </div>
-                    </div>
                 </section>
                 
                 <section id="other-projects" class="content-section">
                     <h3 class="line-center"> Other Notable Work </h3>
                     <div id="other-projects-grid" class="grid">
                         <div class="card column">
-                            <h5> Search </h5>
-                            <p> Created a search engine that efficiently returns relevant results from a corpus of wiki pages using a page's term-relevance score and Google's PageRank algorithm. </p>
+                            <h5> Multi-Threaded Search </h5>
+                            <p> Built a concurrent, thread-safe search engine that implements Google's PageRank algorithm and tf-idf scoring to return relevant results for a given query. </p>
                             <span class="row down">
-                                <p> Python </p>
-                                <a class="project-icon right">
+                                <p> C/C++ </p>
+                                <a class="project-icon right" href="https://github.com/taiga-forestry/multithreaded-search" target="_blank">
+                                    <i class="fa-brands fa-github"></i> 
+                                </a>
+                            </span>
+                        </div>
+                        <div class="card column">
+                            <h5> Caching I/O </h5>
+                            <p> Developed a virtual single-slot cache to optimize read, write, and seek system calls for a custom file input/output library. </p>
+                            <span class="row down">
+                                <p> C/C++ </p>
+                                <a class="project-icon right" href="https://cs.brown.edu/courses/csci0300/2023/assign/projects/project3.html" target="_blank">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
                         </div>
                         <div class="card column">
                             <h5> Travel Planner </h5>
-                            <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two Cities based on minimum cost or duration as well as maximal directness. </p>
+                            <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two cities based on minimum cost or duration as well as maximal directness. </p>
                             <span class="row down">
                                 <p> Java </p>
-                                <a class="project-icon right">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </span>
-                        </div>
-                        <div class="card column">
-                            <h5> Liquid Image Scaling </h5>
-                            <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm minimizing unwanted distortions. </p>
-                            <span class="row down">
-                                <p> Pyret </p>
-                                <a class="project-icon right">
+                                <a class="project-icon right" href="https://hackmd.io/FDY8JfHVRRWrg2st8T4lHg" target="_blank">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
@@ -181,17 +186,17 @@
                             <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
                             <span class="row down">
                                 <p> Java </p>
-                                <a class="project-icon right">
+                                <a class="project-icon right" href="https://hackmd.io/@csci0200/HkPjM0kn_" target="_blank">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
                         </div>
                         <div class="card column">
-                            <h5> Updater </h5>
-                            <p> Designed a "cursor" data structure enabling efficient search, update, and multidirectional traversal operations on an immutable tree of arbitrary degree. </p>
+                            <h5> Liquid Image Scaling </h5>
+                            <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm minimizing unwanted distortions. </p>
                             <span class="row down">
                                 <p> Pyret </p>
-                                <a class="project-icon right">
+                                <a class="project-icon right" href="https://cs.brown.edu/courses/cs019/2021/fluid-img.html" target="_blank">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
@@ -200,13 +205,13 @@
                             <h5> My Portfolio </h5>
                             <p> My personal website! In other words, the thing you're looking at right now. </p>
                             <span class="row down">
-                                <p class="left"> HTML, CSS, JS, jQuery </p>
+                                <p class="left"> HTML, CSS, JS </p>
                                 <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-icon" target="_blank">
                                     <i class="fa-brands fa-github"></i> 
                                 </a>
-                                <a href="https://taiga-forestry.github.io/" class="project-icon">
+                                <!-- <a href="https://taiga-forestry.github.io/" class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
+                                </a> -->
                             </span>
                         </div>
                     </div>
@@ -279,7 +284,7 @@
                 </section>
             </div>
         </main>
-        
+
         <footer class="column">
             <div id="contact-footer" class="grid">
                 <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon-footer" target="_blank">
@@ -295,7 +300,7 @@
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
-
+    
             <p id="outro"> 
                 <a href="https://github.com/taiga-forestry" target="_blank"> taiga-forestry ♮ Tiger Ji ♮ tiger_ji@brown.edu </a>
             </p>
