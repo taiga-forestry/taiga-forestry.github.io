@@ -29,7 +29,7 @@
             <a href="#about" class="nav-bar-item"> About </a>
             <a href="#featured-projects" class="nav-bar-item"> Projects </a>
             <a href="#qualifications" class="nav-bar-item"> Qualifications </a>
-            <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" id="nav-bar-end" class="nav-bar-item" target="_blank"> Resume </a>
+            <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" id="nav-bar-end" class="nav-bar-item"> Resume </a>
             <i id="nav-dropdown" class="nav-bar-item material-symbols-outlined"> 
                 <a onclick="openNavModal()"> menu </a> 
             </i>
@@ -40,7 +40,7 @@
             <a href="#about" class="nav-modal-item" onclick="closeNavModal()"> About </a>
             <a href="#featured-projects" class="nav-modal-item" onclick="closeNavModal()"> Projects </a>
             <a href="#qualifications" class="nav-modal-item" onclick="closeNavModal()"> Qualifications </a>
-            <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" class="nav-modal-item" id="nav-modal-end" target="_blank" onclick="closeNavModal()"> Resume </a>
+            <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" class="nav-modal-item" id="nav-modal-end"  onclick="closeNavModal()"> Resume </a>
         </nav>
         
         <div style="background-color: rgb(15,30,37);">
@@ -65,12 +65,11 @@
                     <h3 class="line-right"> About Me </h3>
                     <div id="my-info">
                         <div id="autobiography">
-                            <p> Hi there! My name is Tiger Ji, and I'm currently pursuing a B.S. in Computer Science and Applied Mathematics at Brown University. </p>
-                            <p> My primary interests lie in AI/ML and Software Engineering. </p>
+                            <p> Hi there! My name is Tiger, and I'm currently pursuing a B.S. in Computer Science and Applied Mathematics at <a href="https://www.brown.edu/" class="hover-underline-animation">Brown University</a> with a focus on Software Principles and AI/ML. </p>
                             <p> Some of my other hobbies and passions include: </p> 
                             <ul>
-                                <li> Breakdance! I'm the Dance Captain of Ground Breakin', Brown's premier breaking club — you might catch a glimpse of me spinning on my head if you drop by one of our practices. </li>
-                                <li> Classical Music — I've played violin and piano for over 8 years, and I'm a current member of the Brown University Orchestra. </li>
+                                <li> Breakdance! I'm the Dance Captain of <a href="https://www.instagram.com/browngroundbreakin/" class="hover-underline-animation">Ground Breakin'</a>, Brown's premier breaking club — you might catch a glimpse of me spinning on my head if you drop by one of our practices. </li>
+                                <li> Classical Music — I've played violin and piano for over 8 years, and I'm a current violinist for the <a href="https://www.brown.edu/Departments/Music/sites/orchestra/" class="hover-underline-animation">Brown University Orchestra</a>. </li>
                                 <li> Basketball is my favorite sport, and on any given day you'll likely find me playing a pickup game or obsessing over NBA analytics. </li>
                                 <li> Word Hunt. With a high score of 55.1k and over 2,500 wins, you'll be hard pressed to find a bigger WH fanatic than me. </li>
                             </ul> 
@@ -85,62 +84,62 @@
                     <h3 class="line-right"> Featured Projects </h3>
                     <div class="featured-project row">
                         <figure>
-                            <a href="https://neuraldecompiler.pythonanywhere.com/" target="_blank">
-                                <img id="cssi-image" class="featured-image" src="assets/cssi.png">
+                            <a href="https://neuraldecompiler.pythonanywhere.com/">
+                                <img class="featured-image" src="assets/decompiler.png">
                             </a>
                         </figure>
-                        <div id="cssi-feature" class="featured-description">  
-                            <a href="https://neuraldecompiler.pythonanywhere.com/" target="_blank">
+                        <div id="featured-1" class="featured-description">  
+                            <a href="https://neuraldecompiler.pythonanywhere.com/">
                                 <h4> NeuralDecompiler </h4>
                             </a>
                             <p> A state-of-the-art, transformer-based neural network trained on 10,000+ files and 5,000,000+ parameters, capable of translating low-level x86-64 assembly instructions to human-readable C programs. </p>
                             <span class="row"> 
                                 <p> Python, TensorFlow, Flask </p>
-                                <a href="https://neuraldecompiler.pythonanywhere.com/" class="project-icon" target="_blank">
+                                <a href="https://neuraldecompiler.pythonanywhere.com/" class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                                <a href="https://neuraldecompiler.pythonanywhere.com/" class="project-icon" target="_blank">
+                                <a href="https://github.com/taiga-forestry/neural-decompiler" class="project-icon">
                                     <i class="fa-brands fa-github"></i> 
                                 </a> 
                             </span>
                         </div>
                     </div>
                     <div class="featured-project row">
-                        <div id="word-hunt-feature" class="featured-description">  
-                            <a href="https://whsolver.pythonanywhere.com/" target="_blank">
+                        <div id="featured-2" class="featured-description">  
+                            <a href="https://whsolver.pythonanywhere.com/">
                                 <h4> Word Hunt Solver </h4>
                             </a>
                             <p> Find all solutions for a given Word Hunt game! This program uses a custom trie data structure to efficiently validate all potential words produced by a recursive depth-first graph traversal by discarding letter chains that aren't present in the trie. </p>
                             <span class="row">
                                 <p> Python, Flask </p>
-                                <a href="https://whsolver.pythonanywhere.com/" class="project-icon" target="_blank">
+                                <a href="https://whsolver.pythonanywhere.com/" class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a> 
-                                <a href="https://github.com/taiga-forestry/Word-Hunt-Solver" class="project-icon" target="_blank">
+                                <a href="https://github.com/taiga-forestry/Word-Hunt-Solver" class="project-icon">
                                     <i class="fa-brands fa-github"></i> 
                                 </a>
                             </span>
                         </div>
                         <figure>
-                            <a href="https://whsolver.pythonanywhere.com/" target="_blank">
-                                <img id="word-hunt-image" class="featured-image" src="assets/word-hunt.png">     
+                            <a href="https://whsolver.pythonanywhere.com/">
+                                <img class="featured-image" src="assets/word-hunt.png">     
                             </a>
                         </figure>
                     </div>
                     <div class="featured-project row">
                         <figure>
-                            <a href="https://sunflower-washateria.netlify.app/" target="_blank">
-                                <img id="sunflower-image" class="featured-image" src="assets/sunflower.png">
+                            <a href="https://sunflower-washateria.netlify.app/">
+                                <img class="featured-image" src="assets/sunflower.png">
                             </a>
                         </figure>
-                        <div id="sunflower-feature" class="featured-description">  
-                            <a href="https://sunflower-washateria.netlify.app/" target="_blank">
+                        <div id="featured-3" class="featured-description">  
+                            <a href="https://sunflower-washateria.netlify.app/">
                                 <h4> Sunflower Washateria </h4>
                             </a>
                             <p> A dynamic, full-stack platform implemented for my local washateria supporting a custom-created user account system with login and registration capabilities, a page enabling users to schedule orders for pickup and delivery laundry services, and an automated email contact form. </p>
                             <span class="row"> 
                                 <p> React, Express, Node, MongoDB </p>
-                                <a href="https://sunflower-washateria.netlify.app/" class="project-icon" target="_blank">
+                                <a href="https://sunflower-washateria.netlify.app/" class="project-icon">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a> 
                             </span>
@@ -153,20 +152,20 @@
                     <div id="other-projects-grid" class="grid">
                         <div class="card column">
                             <h5> Multi-Threaded Search </h5>
-                            <p> Built a concurrent, thread-safe search engine that implements Google's PageRank algorithm and tf-idf scoring to return relevant results for a given query. </p>
+                            <p> Built a concurrent, thread-safe search engine that implements tf-idf scoring and Google's PageRank algorithm to return relevant results for a given query. </p>
                             <span class="row down">
                                 <p> C/C++ </p>
-                                <a class="project-icon right" href="https://github.com/taiga-forestry/multithreaded-search" target="_blank">
+                                <a class="project-icon right" href="https://github.com/taiga-forestry/multithreaded-search">
                                     <i class="fa-brands fa-github"></i> 
                                 </a>
                             </span>
                         </div>
                         <div class="card column">
                             <h5> Caching I/O </h5>
-                            <p> Developed a virtual single-slot cache to optimize read, write, and seek system calls for a custom file input/output library. </p>
+                            <p> Programmed a virtual single-slot cache to optimize read, write, and seek system calls for a custom file input/output library. </p>
                             <span class="row down">
                                 <p> C/C++ </p>
-                                <a class="project-icon right" href="https://cs.brown.edu/courses/csci0300/2023/assign/projects/project3.html" target="_blank">
+                                <a class="project-icon right" href="https://cs.brown.edu/courses/csci0300/2023/assign/projects/project3.html">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
@@ -176,17 +175,17 @@
                             <p> Implemented Dijksta's Algorithm to calculate the ideal path between any two cities based on minimum cost or duration as well as maximal directness. </p>
                             <span class="row down">
                                 <p> Java </p>
-                                <a class="project-icon right" href="https://hackmd.io/FDY8JfHVRRWrg2st8T4lHg" target="_blank">
+                                <a class="project-icon right" href="https://hackmd.io/FDY8JfHVRRWrg2st8T4lHg">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
                         </div>
                         <div class="card column">
                             <h5> Decision Tree </h5>
-                            <p> Developed a decision tree machine learning algorithm which predicted the classification of various items on provided datasets with over 80% accuracy. </p>
+                            <p> Developed a decision tree machine learning algorithm to predict the classification of various items on provided datasets with over 80% accuracy. </p>
                             <span class="row down">
                                 <p> Java </p>
-                                <a class="project-icon right" href="https://hackmd.io/@csci0200/HkPjM0kn_" target="_blank">
+                                <a class="project-icon right" href="https://hackmd.io/@csci0200/HkPjM0kn_">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
@@ -196,17 +195,17 @@
                             <p> Used memoization and dynamic programming to implement an efficient, content-aware image resizing algorithm minimizing unwanted distortions. </p>
                             <span class="row down">
                                 <p> Pyret </p>
-                                <a class="project-icon right" href="https://cs.brown.edu/courses/cs019/2021/fluid-img.html" target="_blank">
+                                <a class="project-icon right" href="https://cs.brown.edu/courses/cs019/2021/fluid-img.html">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </span>
                         </div>
                         <div class="card column">
                             <h5> My Portfolio </h5>
-                            <p> My personal website! In other words, the thing you're looking at right now. </p>
+                            <p> My personal website! In other words, what you're looking at right now. </p>
                             <span class="row down">
                                 <p class="left"> HTML, CSS, JS </p>
-                                <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-icon" target="_blank">
+                                <a href="https://github.com/taiga-forestry/taiga-forestry.github.io" class="project-icon">
                                     <i class="fa-brands fa-github"></i> 
                                 </a>
                                 <!-- <a href="https://taiga-forestry.github.io/" class="project-icon">
@@ -221,62 +220,86 @@
                     <h3 class="line-right"> Qualifications </h4>
                     <div id="qualifications-container" class="row">
                         <div id="education" class="row">
-                            <img id="brown-logo" src="assets/brown.png">
+                            <!-- <img id="brown-logo" src="assets/brown.png"></img> -->
                             <div id="education-info">
-                                <h4> Brown University </h4>
-                                <p> B.S. — Computer Science and Applied Mathematics </p>
+                                <h4> Education </h4>
+                                <p> B.S. in Computer Science and Applied Mathematics @ <a href="https://www.brown.edu/undergraduateconcentrations/applied-mathematics-computer-science-scb" class="hover-underline-animation">Brown University</a> </p>
+                                <p> GPA: 4.0/4.0 — check out my courses below! </p>
                                 <div class="row">
-                                    <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" class="button" target="_blank"> Relevant Coursework </a>
+                                    <a href="https://drive.google.com/file/d/1nnX-XQSxMdjpy23aTkNBSBQ9r9vUZxK1/view?usp=sharing" class="button"> Relevant Coursework </a>
                                 </div>
                             </div>
                         </div>
                         <div id="experience">
-                            <h4> Experience </h4>  
+                            <h4> Work Experience </h4>  
                             <div id="experience-grid" class="grid">
                                 <div>
                                     <ol id="experience-list">
-                                        <a onclick="showExperienceDescription('Google CSSI')">
-                                            <li id="cssi"> Google CSSI </li> 
+                                        <a onclick="showExperienceDescription('Braze')">
+                                            <li id="braze"> Braze </li> 
                                         </a>
-                                        <a onclick="showExperienceDescription('iCode')"> 
-                                            <li id="icode"> iCode </li> 
+                                        <a onclick="showExperienceDescription('CR')">
+                                            <li id="cr"> Critical Review </li> 
                                         </a>
-                                        <a onclick="showExperienceDescription('EnLiving Design')"> 
-                                            <li id="enliving"> EnLiving Design </li> 
+                                        <a onclick="showExperienceDescription('Brown')"> 
+                                            <li id="brown"> Brown </li> 
+                                        </a>
+                                        <a onclick="showExperienceDescription('CSSI')"> 
+                                            <li id="cssi"> Google </li> 
                                         </a>
                                     </ol>
                                 </div>
                                 <div id="experience-descriptions" class="grid">
+                                    <div id="braze-description" class="experience-description">
+                                        <h6> SWE Intern @ <a href="https://www.braze.com/" class="hover-underline-animation">Braze</a> </h6>
+                                        <p> June 2023 — Present </p>
+                                        <ul>
+                                            <li> Currently working on the In-App Messaging Team! </li>
+                                            <li> Goal: integrate Figma's API into Braze’s custom drag-and-drop no-code editor, enabling companies to push news, updates, and alerts more efficiently to their consumers </li>
+                                        </ul> 
+                                    </div>
+                                    <div id="cr-description" class="experience-description">
+                                        <h6> Engineer @ <a href="https://thecriticalreview.org/" class="hover-underline-animation">The Critical Review</a> </h6>
+                                        <p> April 2023 — Present</p>
+                                        <ul>
+                                            <li> Currently working on Brown University's official website for course and professor reviews! </li>
+                                            <li> Goal: migrate legacy code to a more modern tech stack and refine the search algorithm for improved reliability and accuracy </li>
+                                        </ul> 
+                                    </div>
+                                    <div id="brown-description" class="experience-description">
+                                        <h6> Undergraduate TA @ <a href="https://brown-csci0200.github.io/" class="hover-underline-animation">Brown</a> </h6>
+                                        <p> January 2023 — May 2023 </p>
+                                        <ul>
+                                            <li> Conducted weekly office hours, lab sections, and design checks for 400+ students to teach core data structures, algorithms, and OOP principles </li>
+                                            <li> Revamped course project Decision Tree, increasing staff solution code accuracy by 10% and revising handout to improve student understanding of concepts such as mutability, recursion, and trees </li>
+                                        </ul>
+                                    </div>
                                     <div id="cssi-description" class="experience-description">
-                                        <h6> CS Summer Institute @ Google </h6>
+                                        <h6> CS Summer Institute @ <a href="https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute" class="hover-underline-animation">Google</a></h6>
                                         <p> July 2021 — August 2021 </p>
                                         <ul>
                                             <li> Completed a project-based curriculum for HTML, CSS, JS, and Firebase led by Google developers </li>
                                             <li> Configured 10+ projects to practice object-oriented programming, effective UI/UX, authorization and authentication, and Git </li>
-                                            <li> Developed a personalized “university student page”, presented to Google engineers and community leaders (see <a href="#cssi-description"> Featured Projects! </a>)</li>
+                                            <li> Developed a personalized “university student page”, presented to Google engineers and community leaders </li>
                                         </ul>
                                     </div>
-                                    <div id="icode-description" class="experience-description">
-                                        <h6>
-                                            Instructor @ iCode
-                                        </h6>
+                                    <!-- <div id="icode-description" class="experience-description">
+                                        <h6> Instructor @ iCode </h6>
                                         <p> August 2020 — July 2021 </p>
                                         <ul>
                                             <li> Taught weekly classes for various age ranges about concepts such as coding fundamentals in Scratch and basic web development in HTML </li>
                                             <li> Led camps for 40+ hours/week on programming drones in Python, developing games with Construct 3, and using Raspberry Pi and circuits </li>
-					    <li> Planned and held open house demos for 100+ prospective students and families over the year </li>
+					                        <li> Planned and held open house demos for 100+ prospective students and families over the year </li>
                                         </ul> 
                                     </div>
                                     <div id="enliving-description" class="experience-description">
-                                        <h6>
-                                            Research Assistant @ EnLiving Design
-                                        </h6>
+                                        <h6> Research Assistant @ EnLiving Design </h6>
                                         <p> May 2020 — August 2020 </p>
                                         <ul>
                                             <li> Read 100+ pages of literature about the utility of depth cameras in helping occupational therapists more accurately assess clinical sitting body balance </li>
                                             <li> Coded a program in C# to track joint movement patterns using the Intel RealSense skeleton tracking SDK to update the previous code written for the discontinued Microsoft Kinect line </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -287,22 +310,22 @@
 
         <footer class="column">
             <div id="contact-footer" class="grid">
-                <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon-footer" target="_blank">
+                <a href="https://www.instagram.com/taiga.forestry/" class="contact-icon-footer">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="mailto: tiger_ji@brown.com" class="contact-icon-footer" target="_blank">
+                <a href="mailto: tiger_ji@brown.com" class="contact-icon-footer">
                     <i class="fa-regular fa-envelope"></i>
                 </a>
-                <a href="https://github.com/taiga-forestry" class="contact-icon-footer" target="_blank">
+                <a href="https://github.com/taiga-forestry" class="contact-icon-footer">
                     <i class="fa-brands fa-github"></i> 
                 </a>
-                <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon-footer" target="_blank">
+                <a href="https://www.linkedin.com/in/tiger-ji/" class="contact-icon-footer">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
     
             <p id="outro"> 
-                <a href="https://github.com/taiga-forestry" target="_blank"> taiga-forestry ♮ Tiger Ji ♮ tiger_ji@brown.edu </a>
+                <a href="https://github.com/taiga-forestry"> taiga-forestry ♮ Tiger Ji ♮ tiger_ji@brown.edu </a>
             </p>
         </footer>
     </body>

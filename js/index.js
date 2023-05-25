@@ -10,8 +10,30 @@ window.onscroll = (event) => {
 }
 
 window.onload = (event) => {
+    colorAtSigns();
+    addTargetBlank();
     loadPage();
-    showExperienceDescription("Google CSSI");
+    showExperienceDescription("Braze");
+}
+
+const addTargetBlank = () => {
+    // Get all the <a> tags in the document
+    const anchorTags = document.getElementsByTagName("a");
+
+    // Loop through each <a> tag and add the target="_blank" attribute
+    for (let i = 0; i < anchorTags.length; i++) {
+        anchorTags[i].setAttribute("target", "_blank");
+    }
+}
+
+const colorAtSigns = () => {
+    $('p').each(function () {
+        $(this).html($(this).html().replace(/( \@ )/g, '<span style="color: var(--aqua);"> @ </span>'));
+    });
+
+    $('h6').each(function () {
+        $(this).html($(this).html().replace(/(\@)/g, '<span style="color: var(--aqua);">@</span>'));
+    });
 }
 
 // when TJ in navbar is clicked
@@ -145,16 +167,8 @@ const blurHome = () => {
 const showExperienceDescription = (organization) => {
     $(lastExperienceSelected).removeClass("experience-selected");
     $(lastExperienceSelected + "-description").removeClass("reveal");
-
-    if (organization == "Google CSSI") {
-        lastExperienceSelected = "#cssi";
-    }
-    else if (organization == "iCode") {
-        lastExperienceSelected = "#icode";
-    }
-    else if (organization == "EnLiving Design") {
-        lastExperienceSelected = "#enliving";
-    }
+    
+    lastExperienceSelected = "#" + organization.toLowerCase();
 
     $(lastExperienceSelected).addClass("experience-selected");
     $(lastExperienceSelected + "-description").addClass("reveal");
