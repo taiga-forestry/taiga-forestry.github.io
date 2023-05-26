@@ -22,11 +22,11 @@ const addTargetBlank = () => {
 
     // Loop through each <a> tag and add the target="_blank" attribute
     for (let i = 0; i < anchorTags.length; i++) {
-        if (anchorTags[i].classList.contains("nav-bar-item") || anchorTags[i].classList.contains("nav-modal-item")) {
-            continue;
+        let tag = anchorTags[i];
+
+        if (tag.id.slice(-4) == "-end" || !(tag.classList.contains("nav-bar-item") || tag.classList.contains("nav-modal-item"))) {
+            tag.setAttribute("target", "_blank");
         }
-        
-        anchorTags[i].setAttribute("target", "_blank");
     }
 }
 
