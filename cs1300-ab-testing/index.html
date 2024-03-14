@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <!-- meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta name="description" content="Tiger Ji's Word Hippo Redesign Submission Website">
+	    <meta name="keywords" content="Tiger Ji, Brown University">
+        <title> A/B Testing Experiment </title>
+
+        <!-- personal styles and google fonts + icons -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+        </style>
+
+        <!-- personal scripts, fontawesome, and jquery -->
+        <script src="js/index.js"></script>
+        <script src="https://kit.fontawesome.com/35850cf6ad.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body class="column">
+      <main class="column">
+        <h1> A/B Testing Experiment for MEDx </h1>
+
+        <section class="column">
+          <h2> Context </h2>
+          <p>
+            In CSCI 1300, one of our assignments is to propose a slight redesign a currently existing webpage, MEDx, to
+            improve the usability and effectiveness of the site. However, our end goal was not just to implement the change,
+            but also use A/B testing to quantitatively evaluate whether or not the proposed change was impactful. By objectively
+            being able to view changes in certain metrics from version A of a site to version B, we can more confidently determine
+            if our changes should be kept or not.
+          </p> 
+          <img id="hippo" src="assets/index_hippo_logo.png" width="175px"/>  
+        </section>
+  
+        <section class="column">
+          <h2> Part 1: Implementing the Change </h2>
+          <p> After a bit of tinkering with the site, I made the following minor changes: </p>
+          <div id="sketches" class="row">
+            <div id="issues" class="row">
+              <div>
+                <ul>
+                  <li> Increased color contrast for buttons to improve readability </li>
+                  <li> Added effects on hover for the button background color to help users better visualize their cursor </li>
+                  <li> Sorted the available appointments in order by date, and then alphabetically </li>
+                </ul>
+              </div>
+            </div>
+            
+            <img class="sketch" src="assets/edited.png" width="800px" />
+          </div>
+        </section>
+  
+        <section class="column">
+          <h2> Part 2: Creating Hypotheses </h2>
+          <p> Next, I identified 3 key metrics to evaluate website effectiveness: </p>
+          <ul style="padding-left: 24px;">
+            <li> 1. User Misclick Rate: the frequency with which users click something else on the page before finding the correct button for the task  </li>
+            <li> 2. Time Spent on Site: the time spent on the webpage for each user group </li>
+            <li> 3. Total Mouse Movement: the amount of pixels moved by the mouse until task was completed </li>
+          </ul>
+  
+          <!-- <div id="sketches" class="row">
+            <div>
+              <h3> Initial Sketches </h3>
+              <img class="sketch" src="assets/sketches.png" width="500px" height="575px"/>
+            </div>
+  
+            <div>
+              <h3> Final Sketch </h3>
+              <img class="sketch" src="assets/final-sketch.png" width="500px" height="575px"/>
+            </div>
+          </div> -->
+  
+          <p> Then, I developed a hypothesis for each metric to predict how my implemented changes would affect the metrics above. </p>
+          <table>
+            <tr>
+              <th> </th>
+              <th> User Misclick Rate</th>
+              <th> Time Spent on Site </th>
+              <th> Total Mouse Movement </th>
+            </tr>
+
+            <tr>
+              <td> Null Hypothesis</td>
+              <td> The changes to the website did not affect the users' overall misclick rate  </td>
+              <td> The changes to the website did not affect the overall amount of time users spent on the website to complete their task </td>
+              <td> The changes to the website did not affect how much the user moved their mouse to complete their task </td>
+            </tr>
+
+            <tr>
+              <td> Alternate Hypothesis</td>
+              <td> The changes to the website did significantly affect the users' overall misclick rate </td>
+              <td> The changes to the website significantly affected the overall amount of time users spent on the website to complete their task </td>
+              <td> The changes to the website significantly affected how much the user moved their mouse to complete their task </td>
+            </tr>
+
+            <tr>
+              <td> Prediction </td>
+              <td> I believe the time on page should decrease, as the more legible buttons and text should help prevent cases where the user would click on the wrong button if they could not read the button text properly </td>
+              <td> I believe the time on page should decrease, as the more legible buttons and text should help the user more quickly identify the button they need to click to complete their task </td>
+              <td> I believe the amount of mouse movement should not change significantly since the webpage dimensions remains the same, and any changes in how quickly or efficiently the user could find the button would not affect how far their mouse moved to get to that button </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="column">
+          <h2> Part 3: Gathering Data </h2>
+          <p> After our in-person studio, I obtained the following data, where A represents the control group (the original design) with 34 data points, and B represents the experimental group (the site after I applied my changes) with 26 data points, rounded to the hundreths digits: </p>
+          <table>
+            <tr>
+              <th> </th>
+              <th> User Misclick Rate</th>
+              <th> Time Spent on Site </th>
+              <th> Total Mouse Movement </th>
+            </tr>
+
+            <tr>
+              <td> Method</td>
+              <td> ꭓ² (only 2 discrete categories, misclicked or no misclicks) </td>
+              <td> Two-Tailed (want to measure difference in time spent in either direction) </td>
+              <td> Two-Tailed (want to measure difference in mouse movement in either direction) </td>
+            </tr>
+
+            <tr>
+              <td> Summary</td>
+              <td>
+                <p> Avg(A) = 6.23 sessions with a misclick </p>
+                <p> Avg(A) = 27.77 sessions with no misclicks </p>
+                <p> Avg(B) = 4.77 sessions with a misclick </p>
+                <p> Avg(B) = 21.23 sessions with no misclicks </p>
+              </td>
+
+              <td>
+                <p> Avg(A) = 12.91s</p>
+                <p> Var(A) = 141.16s </p>
+                <p> Avg(B) = 11.63s </p>
+                <p> Var(B) = 194.44s </p>
+              </td>
+
+              <td>
+                <p> Avg(A) = 4006.56 px</p>
+                <p> Var(A) = 6401849.39 px</p>
+                <p> Avg(B) = 3317.50 px</p>
+                <p> Var(B) = 1966050.27 px </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td> Intepretation </td>
+              <td> With a p-value of 0.71, the difference in misclick rate between trials A and B is <strong> not significant enough </strong> to reject the null hypothesis that the website edits affected how frequently users would misclick on one site versus the other </td>
+              <td> With a p-value of 0.19, the difference in the amount of time a user spent on site A vs site B in completing their task is slightly more statistically significant but <strong> still not significant enough </strong> to reject the null hypothesis that the website edits impacted how much time users spent on the site to complete their task </td>
+              <td> With a p-value of 0.61, the difference in mouse movement between trials A and B is <strong> not significant enough </strong> to reject the null hypothesis that the website edits affected how much users moved their mouse.  </td>
+            </tr>
+
+
+            <tr>
+              <td> Conclusion </td>
+              <td> Fail to reject null hypothesis </td>
+              <td> Fail to reject null hypothesis </td>
+              <td> Fail to reject null hypothesis </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="column">
+          <h2> Part 4: Final Thoughts and Findings </h2>
+          <p> Across all 3 metrics, I observed that the changes I made to the site were ultimately not very impactful. It's important to note, however, that given a limited sample size of 25-35, larger variation would be needed to be statistically confident that the null hypothesis is rejectable.</p>
+
+          <ul style="padding-left: 24px; padding-bottom: 24px; border-bottom: 1px solid gray;">
+            <li>
+              For the user misclick rate, I had ꭓ² = 0.27, which demonstrates a low discrepancy between our observed data and the expected data if the null hypothesis were true. 
+            </li>
+
+            <li>
+              For the amount of time, the magnitude of the t-score = 0.38, which is less than 2, the traditional "value" of a significant t-score. We can observe that the difference in average time spent is ~1.25 seconds, which intuitively not a big difference relative to 11-12 seconds of overall time spent. 
+            </li>
+
+            <li>
+              For the mouse movement metric, the magnitude of the t-score = 1.34, which is less than 2, the traditional "value" of a significant t-score, so the difference between our observed data and expected data assuming a null hypothesis is low.
+            </li>
+          </ul>
+          
+          <p>
+            One possible reason I believe that the data isn't actually reflective of the effectiveness of the changes at large is that the data collection process used in studo
+            doesn't abide by the assumptions of most statistical analysis: that our data is identically and independently distributed.
+          </p>
+
+          <p>
+            For instance, across 25+ different computers, students repeating the same task over and over likely led to students gaining practice
+            over time, so the amount of time/amount of misclicks/etc. would be influenced by student exposure to similar interfaces other students may
+            have implemented or used in this studio. Towards the end, students were hardly paying attention to the site itself and just clicking through
+            via memorization.
+          </p>
+          <p>
+            Thus, the data isn't actually representative of the quality of the interface, but rather its similarity to the ones other interfaces designed in the studio. One solution to this would be 
+            encourage students to alter the actual task for each data sampling on each computer, so instead of being able to generally
+            memorize what to do for each computer, students would have to take more time to engage with the interface.
+          </p>
+        </section>
+      </main>
+    </body>
+</html>
+
+

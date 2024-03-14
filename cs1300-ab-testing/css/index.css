@@ -1,0 +1,113 @@
+/* BASICS */
+html {
+  --off-black: rgba(40,40,40);
+  --off-white: rgba(247,247,247);
+  --off-gray: rgba(222, 222, 222);
+
+  --off-white-5: rgba(247,247,247,0.05);
+
+  --dark-blue: rgb(3, 22, 33);
+  --light-blue: rgba(128, 194, 255, 1);
+  --accent-pink: rgba(245, 99, 199, 1);
+
+  --shadow: 0px 0px 25px 0px var(--darker-blue);
+  scroll-behavior: smooth; 
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--off-white);
+  color: var(--off-black);
+  padding: 32px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 550;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 550;
+}
+
+section {
+  gap: 12px;
+}
+
+p, li, table {
+  font-size: 18px;
+  line-height: 125%;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+body {
+  align-items: center;
+}
+
+main {
+  gap: 36px;
+  max-width: 80vw;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+#issues {
+  gap: 24px;
+}
+
+#issues > div {
+  max-width: 600px;
+  padding: 24px;
+}
+
+#sketches {
+  gap: 24px;
+  padding: 24px;
+}
+
+.sketch {
+  border: 2px solid var(--off-black);
+  border-radius: 15px;
+  margin-top: 12px;
+}
+
+#hippo {
+  align-self: end;
+  margin-bottom: -40px;
+}
+
+#style-guide {
+  align-self: center;
+  border: 2px solid var(--off-black);
+  border-radius: 20px;
+  margin: 20px;
+}
+
+td, th {
+  padding: 6px;
+  border: 1px solid black;
+}
+
+table {
+  background-color: rgb(191, 240, 241);
+}
